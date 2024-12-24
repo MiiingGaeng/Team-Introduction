@@ -31,5 +31,78 @@
       </div>
     </div>
   </div>
+  <!-- modal join -->
+  <div class="modal__join__container">
+    <div class="modal__left">
+      <div class="modal__profile__img">
+        <img src="" class="userImg" alt="" />
+        <div class="profile__img__text">
+          이미지를 눌러 <br />
+          ZEP 캐릭터를 등록해주세요
+        </div>
+      </div>
+      <input type="file" accept=".png, .jpeg" class="inputImg" />
+    </div>
+    <div class="modal__right">
+      <form action="/upload" method="post" class="modal__form">
+        <input
+          type="text"
+          id="userName"
+          name="userName"
+          required
+          class="textInput"
+          placeholder="성함을 입력해주세요"
+        />
+        <input
+          type="text"
+          id="userPer"
+          name="userPer"
+          required
+          class="textInput"
+          placeholder="MBTI를 입력해주세요"
+        />
+        <input
+          type="text"
+          class="modal__form__long textInput"
+          id="applyReason"
+          name="applyReason"
+          required
+          placeholder="지원동기를 입력해주세요"
+        />
+        <input
+          type="text"
+          id="userHobby"
+          name="userHobby"
+          required
+          class="textInput"
+          placeholder="취미를 입력해주세요"
+        />
+        <input
+          type="text"
+          id="userTmi"
+          name="userTmi"
+          required
+          class="textInput"
+          placeholder="TMI를 하나 입력해주세요"
+        />
+        <input
+          type="text"
+          id="userBlog"
+          name="userBlog"
+          required
+          class="textInput"
+          placeholder="블로그 링크를 입력해주세요"
+        />
+        <input
+          type="text"
+          id="userGit"
+          name="userGit"
+          required
+          class="textInput"
+          placeholder="깃허브 링크를 입력해주세요"
+        />
+      </form>
+    </div>
+  </div>
 </body>
 </html>
