@@ -93,17 +93,15 @@ a {
 
 /* modal2 */
 .modal__join__container {
-  width: 1000px;
-  height: 400px;
+  width: 1200px;
+  height: 600px;
   display: flex;
   justify-content: left;
   align-items: center;
   border: 1px solid black;
   border-radius: 40px;
-  padding: 100px;
+  padding: 100px !important;
 }
-
-/* modal2 */
 
 .modal__profile__img {
   width: 400px;
