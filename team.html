@@ -5,27 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>밥조</title>
   <link rel="stylesheet" href="./style.css">
+  <script defer src="./script.js"></script>
 </head>
 <body>
-  <!-- 멤버 modal창 -->
+  <!-- 멤버소개 모달창 -->
   <div id="member_modalLayer">
     <div id="member_modal">
+      <button id="member_modalBtn" type="button">X</button>
       <div class="member_image">
         <img src="" alt="">
       </div>
 
       <div class="member_info">
-        <ul class="member_info">
+        <h2 id="name">NAME</h1>
+        <p id="mbti">MBTI</p>
+        <p id="hobby">hobby</p>
+        <p id="likes">likes</p>
+        <h3 id="tmi">"tmi"</h3>
+
+        <ul id="member_links">
           <li>
-            <h2 id="name">NAME</h1>
-            <p id="mbti">MBTI</p>
+            <img src="./images/velog_logo.jpeg" alt="vlog">
           </li>
           <li>
-            <p id="hobby">취미 : <span>hobby</span></p>
-            <p id="likes">좋아하는 것 : <span>likes</span></p>
-          </li>
-          <li>
-            <h3 id="tmi">"tmi"</h3>
+            <img src="./images/github_logo.svg" alt="github">
           </li>
         </ul>
       </div>
