@@ -17,6 +17,54 @@ a {
   color: inherit;
 }
 
+/* 팀 페이지 편집 정민 */
+.bodywrap {
+  display: flex;
+  width: 1400px;
+  height: 800px;
+  margin: 100px auto 0px auto;
+}
+
+.teampicture {
+
+  
+  width: 800px;
+  height: 800px;
+  overflow: hidden;
+  margin: 0px 20px 0px 0px;
+  
+
+}
+.teampicture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.teamname {
+  font-size: 24px;
+  width: 600px;
+  height: 600px;
+  margin: 0px 0px 0px 20px;
+
+
+}
+.texttuterteacher {
+  text-align: right;
+
+}
+.textright {
+  text-align: right;
+}
+.textright2 {
+  text-align: right;
+}
+.textright3 {
+  text-align: right;
+}
+
+
 /* 멤버 소개 구조 주하 */
 
 #card.container {
