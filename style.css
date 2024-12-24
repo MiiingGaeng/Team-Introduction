@@ -32,7 +32,7 @@ a {
     .header-content {
       width: 1500px;
       height: 150px;
-      background-image: url(./img/쌀.jpg);
+      background-image: url(./source/쌀.jpg);
       background-position: center;
       background-size: cover;
       color: white;
