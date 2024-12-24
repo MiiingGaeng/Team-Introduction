@@ -1,44 +1,45 @@
 @charset "utf-8";
 
 /* reset */
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-ul,li{
+ul,
+li {
   list-style: none;
 }
 
-a{
-  color:inherit;
+a {
+  color: inherit;
 }
 
-
 /* member_modal */
-#member_modalLayer{
+#member_modalLayer {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  position:relative;
+  position: relative;
 }
 
-#member_modal{
-  position:absolute;
-  top:50%;
-  left:50%;
+#member_modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 1200px;
   height: 600px;
   background: #fff;
   border-radius: 40px;
-  padding:50px;
+  padding: 50px;
 
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
+
 
 #member_modalBtn{
   position:absolute;
@@ -61,26 +62,27 @@ a{
   opacity: 1;
 }
 
-.member_image{
+.member_image {
   width: 400px;
   height: 400px;
   border-radius: 50%;
 
-  border:1px solid #f00;
+  border: 1px solid #f00;
 }
 
-.member_info{
+.member_info {
   width: 400px;
   color:#333;
   line-height: 40px;
   display: flex;
   flex-direction: column;
+  gap:10px;
 }
 
-#name{
+#name {
   font-size: 40px;
 }
-#mbti{
+#mbti {
   width: 110px;
   height: 30px;
   border-radius: 10px;
@@ -89,18 +91,20 @@ a{
   text-align: center;
   line-height: 30px;
   /* 폰트나 배경 색상 변경하기 */
-  background:#333;
-  color:#fff;
+  background: #333;
+  color: #fff;
 }
-#hobby, #likes{
+#hobby,
+#likes {
   margin-left: 10px;
   font-size: 20px;
   line-height: 50px;
 }
-#hobby > span, #likes > span{
-  float:right;
+#hobby > span,
+#likes > span {
+  float: right;
 }
-#tmi{
+#tmi {
   width: 100%;
   height: 40px;
   font-size: 30px;
@@ -128,4 +132,67 @@ a{
   width: 100%;
   height: 100%;
   border-radius: 50%;
+}
+
+
+/* modal2 */
+.modal__join__container {
+  width: 1200px;
+  height: 600px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 40px;
+  padding: 100px !important;
+}
+
+.modal__profile__img {
+  width: 400px;
+  height: 400px;
+  border: 1px black solid;
+  border-radius: 100%;
+  display: flex;
+  justify-items: center;
+  align-items: end;
+  background-image: url(./source/pngegg.png);
+  background-position: center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
+.inputImg {
+  display: none;
+}
+.profile__img__text {
+  padding-left: 100px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+.modal__right {
+  width: 600px;
+}
+.modal__form {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 400px;
+}
+
+.textInput {
+  width: 200px;
+  height: 50px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+  margin-right: 10px;
+}
+.textInput:focus {
+  outline: none;
+}
+.modal__form__long {
+  width: 410px !important;
 }
