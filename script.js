@@ -1,32 +1,34 @@
-const content1 = document.querySelector("#bodywrap");
-const content2 = document.querySelector("#card-container");
-const modal1 = document.querySelector("#member_modalLayer");
-const modal2 = document.querySelector("#modal__join__container");
+import { getFirestore, addDoc, collection, getDocs } from "./firebaseScript";
 
-const btn1 = document.querySelector(".li-1");
-const btn2 = document.querySelector(".li-2");
+// const content1 = document.querySelector("#bodywrap");
+// const content2 = document.querySelector("#card-container");
+// const modal1 = document.querySelector("#member_modalLayer");
+// const modal2 = document.querySelector("#modal__join__container");
 
-window.onload = function () {
-  content2.classList.add("switch");
-  // modal1.classList.add("switch");
-  // modal2.classList.add("switch");
-};
+// const btn1 = document.querySelector(".li-1");
+// const btn2 = document.querySelector(".li-2");
 
-btn1.addEventListener("click", () => {
-  if (content2.classList.contains("switch")) {
-  } else {
-    content2.classList.add("switch");
-    content1.classList.remove("switch");
-  }
-});
+// window.onload = function () {
+//   content2.classList.add("switch");
+//   // modal1.classList.add("switch");
+//   // modal2.classList.add("switch");
+// };
 
-btn2.addEventListener("click", () => {
-  if (content1.classList.contains("switch")) {
-  } else {
-    content1.classList.add("switch");
-    content2.classList.remove("switch");
-  }
-});
+// btn1.addEventListener("click", () => {
+//   if (content2.classList.contains("switch")) {
+//   } else {
+//     content2.classList.add("switch");
+//     content1.classList.remove("switch");
+//   }
+// });
+
+// btn2.addEventListener("click", () => {
+//   if (content1.classList.contains("switch")) {
+//   } else {
+//     content1.classList.add("switch");
+//     content2.classList.remove("switch");
+//   }
+// });
 
 // document.addEventListener("DOMcontentLoaded", () => {
 //   const navLinks = document.querySelectorAll("#nav-menu");
@@ -54,9 +56,11 @@ btn2.addEventListener("click", () => {
 const imgSelect = function () {
   let imgClick = document.querySelector(".modal__profile__img");
   let inputClick = document.querySelector(".inputImg");
-  console.log(imgClick, inputClick);
+  // console.log(imgClick, inputClick);
 
   imgClick.addEventListener("click", () => {
+    console.log("??");
+
     inputClick.click();
   });
 };
@@ -68,7 +72,7 @@ const imgChange = function () {
     const imageSrc = URL.createObjectURL(fileDOM.files[0]);
     preview.style.backgroundImage = "url(" + imageSrc + ")";
     preview.style.backgroundSize = "cover";
-    console.log(imageSrc);
+    // console.log(imageSrc);
 
     document.querySelector(".profile__img__text").style.display = "none";
   });
