@@ -22,197 +22,239 @@ a {
 }
 
 body {
-  height: 160vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #fff9ee;
 }
 
-/* nav */
-.header-container {
-  position: absolute;
+
+
+
+
+/* 네비 */
+.nav {
+  font-family: "Gowun Batang", serif;
   width: 100vw;
-  height: 100vh;
-  top: 0;
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  font-size: 27px;
+  border: 1px solid #bbbbbb;
+  background-color: #fffefd;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  z-index: 10;
+  
 
-  .header {
-    font-family: "Gowun Batang", serif;
-    width: 100%;
-    height: 100%;
-    top: 0;
+  .nav-menu {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    gap: 100px;
 
-    .header-content {
-      width: 100vw;
-      height: 100%;
-      background-image: url(./images/bobjo.png);
-      background-position: center;
-      background-size: cover;
-      color: rgb(255, 234, 116);
-      font-size: 45px;
-      text-shadow: rgb(0, 0, 0) 5px 5px 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .nav {
-      width: 100vw;
-      height: 100px;
-      position: sticky;
-      top: 0;
-      font-size: 27px;
-      border: 1px solid #bbbbbb;
-      background-color: #fffefd;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 10;
-
-      .nav-menu {
-        display: flex;
-        flex-direction: row;
-        gap: 100px;
-
-        .li-1,
-        .li-2 {
-          transition: all 0.5s;
-          &:hover {
-            color: rgb(255, 174, 0);
-          }
-        }
+    .li-1,
+    .li-2 {
+      transition: all 0.5s;
+      &:hover {
+        color: rgb(255, 174, 0);
       }
     }
   }
 }
 
+
+
+
+
+
+/* 컨텐츠 */
 .switch {
   display: none !important;
 }
-*/ #content-container {
-  width: 1500px;
-  /* height: 1200px; */
+
+#content-container {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: calc(100vh - 100px);
   display: flex;
   flex-grow: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
+  /* 시작 페이지 */
+  #start-page {
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/bobjo.png);
+    background-position: center;
+    background-size: cover;
+    color: rgb(255, 234, 116);
+    font-size: 45px;
+    text-shadow: rgb(0, 0, 0) 5px 5px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* 팀 페이지 정민 */
+  #team-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 1300px;
+    height: 500px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    
+    .team-picture {
+      width: 650px;
+      height: 500px;
+      overflow: hidden;
+      margin: 0px 50px 0px 0px;
+      border: 14px solid #ffe595;
+      border-radius: 50px;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    
+    .team-info {
+      margin-right: 10px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+  
+      #team-info-title {
+        font-family: "Gowun Batang", serif;
+        margin-top: 40px;
+        font-size: 30px;
+        color: #4a3716;
+        margin-bottom: 10px;
+      }
+      
+      #team-info-members {
+        font-size: 20px;
+        color: #ffdc73;
+        font-weight: 400;
+        display: flex;
+        gap: 60px;
+  
+        span {
+          font-size: 18px;
+          color: #ff6a00;
+          font-weight: 700;
+        }
+      }
+      #team-info-goal {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        font-size: 18px;
+        font-weight: 00;
+        color: #4a3716;
+        margin-top: 50px;
+        
+        p {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        p:first-child {
+          font-weight: 700;
+          font-size: 25px;
+          color: #ffc720;
+        }
+  
+        hr {
+          border: solid 1.5px #ffe595;
+          width: 35px;
+        }
+      }
+      .team-info-right {
+        text-align: right;
+      }
+    }
+  }
+  
+  /* 멤버 페이지 주하 */
+  #card.container {
+    width: 1500px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rows {
+    width: 1500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    padding: 0 200px;
+  }
+
+  .cards {
+    width: 300px;
+    height: 300px;
+    margin: 0;
+    padding: 0;
+  }
+
+  #card-container img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  /* 멤버카드 호버 주하 */
+
+  .hover {
+    font-family: "Gowun Batang", serif;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(185, 102, 0, 0.872);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .cards:hover {
+    transform: scale(1.1);
+  }
+
+  .cards:hover .hover {
+    opacity: 1;
+  }
 }
+  
 
-/* 팀 페이지 편집 정민 */
 
-#bodywrap {
-  padding-top: 400px;
-  display: flex;
-  width: 1400px;
-  height: 800px;
-}
 
-.teampicture {
-  width: 800px;
-  height: 800px;
-  overflow: hidden;
-  margin: 0px 20px 0px 0px;
-}
 
-.teampicture img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.teamname {
-  font-size: 24px;
-  width: 600px;
-  height: 600px;
-  margin: 0px 0px 0px 20px;
-}
-
-.texttuterteacher {
-  text-align: right;
-}
-
-.textright {
-  text-align: right;
-}
-
-.textright2 {
-  text-align: right;
-}
-
-.textright3 {
-  text-align: right;
-}
-
-/* 멤버 소개 구조 주하 */
-
-#card.container {
-  width: 1500px;
-  height: 100vh;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.rows {
-  width: 1500px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 60px;
-  padding: 0 200px;
-}
-
-.cards {
-  width: 450px;
-  height: 450px;
-  margin: 0;
-  padding: 0;
-}
-
-#card-container img {
-  width: 450px;
-  height: 450px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* 멤버카드 호버 주하 */
-
-.hover {
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  width: 450px;
-  height: 450px;
-  background-color: rgba(0, 0, 0, 0.814);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 100px;
-  color: white;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.cards:hover {
-  transform: scale(1.1);
-}
-
-.cards:hover .hover {
-  opacity: 1;
-}
 
 /* member_modal */
 
@@ -220,7 +262,10 @@ body {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 #member_modal {
@@ -233,6 +278,7 @@ body {
   background: #fff;
   border-radius: 40px;
   padding: 50px;
+  z-index: 101;
 
   display: flex;
   align-items: center;

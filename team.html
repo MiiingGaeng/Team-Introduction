@@ -1,192 +1,167 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bob-jo🍚</title>
-    <link rel="stylesheet" href="./style.css" />
-    <script defer src="./script.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bob-jo🍚</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script defer src="./script.js"></script>
+</head>
 
-  <body>
-    <!--네비게이션 바-->
-    <div class="header-container">
-      <div class="header">
-        <div class="header-content">
+<body>
+  <!--네비게이션 바-->
+
+  <div class="nav">
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li>
+          <a href="#menu1" class="li-1" data-target="bodywrap">팀 소개</a>
+        </li>
+        <li>
+          <a href="#menu2" class="li-2" data-target="card-container"
+            >멤버 소개</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+  
+  
+  
+  
+  
+  <!-- 컨텐츠 -->
+  
+  <div id="content-container">
+
+    <!-- 시작 페이지 도현 -->
+    <div id="start-page"></div>
+
+    <!-- 팀 페이지 정민  -->
+    <div id="team-page">
+      <div class="team-picture">
+        <img src="./images/teamimage.png" />
+      </div>
+      <div class="team-info">
+        <div id="team-info-title">
           <h1>밥조</h1>
         </div>
-        <div class="nav">
-          <nav class="navbar">
-            <ul class="nav-menu">
-              <li>
-                <a href="#menu1" class="li-1" data-target="bodywrap">팀 소개</a>
-              </li>
-              <li>
-                <a href="#menu2" class="li-2" data-target="card-container"
-                  >멤버 소개</a
-                >
-              </li>
-            </ul>
-          </nav>
+        <div id="team-info-members">
+          <p>김민경&nbsp;&nbsp;|&nbsp;&nbsp;김도현&nbsp;&nbsp;|&nbsp;&nbsp;김선제&nbsp;&nbsp;|&nbsp;&nbsp;윤주하&nbsp;&nbsp;|&nbsp;&nbsp;이정민</p>
+          <span>feat.&nbsp;(정윤오)</span>
+        </div>
+        <div id="team-info-goal">
+          <p>TEAM GOAL</p>
+          <hr>
+          <p>🌾&nbsp;&nbsp;남동생 있는 사람들 모임 <span class="team-info-right">윤주하 빼고</span> </p>
+          <p>🌾&nbsp;&nbsp;내향인 모임 <span class="team-info-right">김민경 빼고</span> </p>
+          <p>🌾&nbsp;&nbsp;고양이 없는 사람들 모임 <span class="team-info-right">김선제 빼고</span></p>
+          <p>🌾&nbsp;&nbsp;무경력들 모임 <span class="team-info-right">김도현 빼고</span></p>
+          <p>🌾&nbsp;&nbsp;넷플릭스 출연 안해본 사람들 모임 <span class="team-info-right">이정민 빼고</span></p>
         </div>
       </div>
     </div>
 
-    <div id="content-container">
-      <!-- 팀 페이지 편집 정민  -->
-      <div id="bodywrap">
-        <div class="teampicture">
-          <img src="./images/teamimage.png" />
+    <!-- 멤버 페이지 주하 -->
+    <div id="card-container" >
+      <div id="row1" class="rows">
+        <div id="card1" class="cards">
+          <div class="hover">
+            <p>김도현</p>
+          </div><img src="https://pic.filecast.co.kr/b9/26/b926ae456288a642326d03be3423039a.jpg" alt="loading">
         </div>
-        <div class="teamname">
-          <h1>밥조</h1>
-          <br />
-          <h2>김민경,김도현,김선제,윤주하,이정민</h2>
-          <br />
-          <h3 class="texttuterteacher">feat.(정윤오)</h3>
-          <br />
-          <h3>팀 목표 / 팀 특징</h3>
-          <br />
-          <br />
-          <h3>1. 팀 목표 : 프로젝트 하는 동안 소통 잘하기</h3>
-          <br />
-          <br />
-          <h3>
-            2. 팀 특징 1: E 1명 + I 5명<br />
-            <div class="textright">(( E 절찬 모집 중 ))</div>
-          </h3>
-          <br />
-          <br />
-          <h3>
-            3. 팀 특징 2: 밥 잘 챙겨먹음 <br />
-            <div class="textright2">(( 점저메뉴 공유필수 ))</div>
-          </h3>
-          <br />
-          <br />
-          <h3>
-            4. 팀 특징 3: 아침마다 의상 컨셉 <br />
-            <div class="textright3">(( 모닝스크럼때 의상 체인지 ))</div>
-          </h3>
+        <div id="card2" class="cards">
+          <div class="hover">
+            <p>김민경</p>
+          </div><img src="https://i.ytimg.com/vi/vog973bL56k/maxresdefault.jpg" alt="loading">
+        </div>
+        <div id="card3" class="cards">
+          <div class="hover">
+            <p>김선제</p>
+          </div><img src="https://i.ytimg.com/vi/cSwK3BVSsJo/maxresdefault.jpg" alt="loading">
         </div>
       </div>
-
-      <!-- 멤버 소개 구조 주하 -->
-
-      <div id="card-container">
-        <div id="row1" class="rows">
-          <div id="card1" class="cards">
-            <div class="hover">
-              <p>김도현</p>
-            </div>
-            <img
-              src="https://pic.filecast.co.kr/b9/26/b926ae456288a642326d03be3423039a.jpg"
-              alt="loading"
-            />
-          </div>
-          <div id="card2" class="cards">
-            <div class="hover">
-              <p>김민경</p>
-            </div>
-            <img
-              src="https://i.ytimg.com/vi/vog973bL56k/maxresdefault.jpg"
-              alt="loading"
-            />
-          </div>
-          <div id="card3" class="cards">
-            <div class="hover">
-              <p>김선제</p>
-            </div>
-            <img
-              src="https://i.ytimg.com/vi/cSwK3BVSsJo/maxresdefault.jpg"
-              alt="loading"
-            />
-          </div>
+      <div id="row2" class="rows">
+        <div id="card4" class="cards">
+          <div class="hover">
+            <p>윤주하</p>
+          </div><img
+            src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F999BB1375D27E87D0D"
+            alt="loading">
         </div>
-        <div id="row2" class="rows">
-          <div id="card4" class="cards">
-            <div class="hover">
-              <p>윤주하</p>
-            </div>
-            <img
-              src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F999BB1375D27E87D0D"
-              alt="loading"
-            />
-          </div>
-          <div id="card5" class="cards">
-            <div class="hover">
-              <p>이정민</p>
-            </div>
-            <img
-              src="https://i.ytimg.com/vi/xDWILzBKBBM/maxresdefault.jpg"
-              alt="loading"
-            />
-          </div>
-          <div id="card6" class="cards">
-            <div class="hover">
-              <p>+</p>
-            </div>
-            <img
-              src="https://i.ytimg.com/vi/gMujVfD3oGg/maxresdefault.jpg"
-              alt="loading"
-            />
-          </div>
+        <div id="card5" class="cards">
+          <div class="hover">
+            <p>이정민</p>
+          </div><img src="https://i.ytimg.com/vi/xDWILzBKBBM/maxresdefault.jpg" alt="loading">
+        </div>
+        <div id="card6" class="cards">
+          <div class="hover">
+            <p>+</p>
+          </div><img src="https://i.ytimg.com/vi/gMujVfD3oGg/maxresdefault.jpg" alt="loading">
         </div>
       </div>
-
-      <!-- 멤버소개 모달창 -->
-
-      <!-- <div id="member_modalLayer">
-      <div id="member_modal">
-        <button id="member_modalBtn" type="button">X</button>
-        <div class="member_image">
-          <img src="" alt="">
-        </div>
-  
-        <div class="member_info">
-          <h2 id="name">NAME</h1>
-            <p id="mbti">MBTI</p>
-            <p id="hobby">hobby</p>
-            <p id="likes">likes</p>
-            <h3 id="tmi">"tmi"</h3>
-  
-            <ul id="member_links">
-              <li>
-                <img src="./images/velog_logo.jpeg" alt="vlog">
-              </li>
-              <li>
-                <img src="./images/github_logo.svg" alt="github">
-              </li>
-            </ul>
-        </div>
-      </div>
-    </div> -->
-
-      <!-- modal join -->
-
-      <!-- <div class="modal__join__container" style="display: none;">
-      <div class="modal__left">
-        <div class="modal__profile__img">
-          <img src="" class="userImg" alt="" />
-          <div class="profile__img__text">
-            이미지를 눌러 <br />
-            ZEP 캐릭터를 등록해주세요
-          </div>
-        </div>
-        <input type="file" accept=".png, .jpeg" class="inputImg" />
-      </div>
-      <div class="modal__right">
-        <form action="/upload" method="post" class="modal__form">
-          <input type="text" id="userName" name="userName" required class="textInput" placeholder="성함을 입력해주세요" />
-          <input type="text" id="userPer" name="userPer" required class="textInput" placeholder="MBTI를 입력해주세요" />
-          <input type="text" class="modal__form__long textInput" id="applyReason" name="applyReason" required
-            placeholder="지원동기를 입력해주세요" />
-          <input type="text" id="userHobby" name="userHobby" required class="textInput" placeholder="취미를 입력해주세요" />
-          <input type="text" id="userTmi" name="userTmi" required class="textInput" placeholder="TMI를 하나 입력해주세요" />
-          <input type="text" id="userBlog" name="userBlog" required class="textInput" placeholder="블로그 링크를 입력해주세요" />
-          <input type="text" id="userGit" name="userGit" required class="textInput" placeholder="깃허브 링크를 입력해주세요" />
-        </form>
-      </div>
-    </div>-->
     </div>
-  </body>
+
+
+
+
+
+
+
+    <!-- 멤버 인포 모달창 -->
+
+    <div id="member_modalLayer">
+    <div id="member_modal">
+      <button id="member_modalBtn" type="button">X</button>
+      <div class="member_image">
+        <img src="" alt="">
+      </div>
+
+      <div class="member_info">
+        <h2 id="name">NAME</h1>
+          <p id="mbti">MBTI</p>
+          <p id="hobby">hobby</p>
+          <p id="likes">likes</p>
+          <h3 id="tmi">"tmi"</h3>
+
+          <ul id="member_links">
+            <li>
+              <img src="./images/velog_logo.jpeg" alt="vlog">
+            </li>
+            <li>
+              <img src="./images/github_logo.svg" alt="github">
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+    <!-- 멤버 추가 모달창 -->
+
+    <!-- <div class="modal__join__container" style="display: none;">
+    <div class="modal__left">
+      <div class="modal__profile__img">
+        <img src="" class="userImg" alt="" />
+        <div class="profile__img__text">
+          이미지를 눌러 <br />
+          ZEP 캐릭터를 등록해주세요
+        </div>
+      </div>
+      <input type="file" accept=".png, .jpeg" class="inputImg" />
+    </div>
+    <div class="modal__right">
+      <form action="/upload" method="post" class="modal__form">
+        <input type="text" id="userName" name="userName" required class="textInput" placeholder="성함을 입력해주세요" />
+        <input type="text" id="userPer" name="userPer" required class="textInput" placeholder="MBTI를 입력해주세요" />
+        <input type="text" class="modal__form__long textInput" id="applyReason" name="applyReason" required
+          placeholder="지원동기를 입력해주세요" />
+        <input type="text" id="userHobby" name="userHobby" required class="textInput" placeholder="취미를 입력해주세요" />
+        <input type="text" id="userTmi" name="userTmi" required class="textInput" placeholder="TMI를 하나 입력해주세요" />
+        <input type="text" id="userBlog" name="userBlog" required class="textInput" placeholder="블로그 링크를 입력해주세요" />
+        <input type="text" id="userGit" name="userGit" required class="textInput" placeholder="깃허브 링크를 입력해주세요" />
+      </form>
+    </div>
+  </div>-->
+  </div>
+</body>
 </html>
