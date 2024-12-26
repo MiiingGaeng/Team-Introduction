@@ -8,42 +8,36 @@
   <script defer src="./script.js"></script>
 </head>
 
-<body>
-  <!--네비게이션 바-->
+  <body>
+    <!--네비게이션 바-->
 
-  <div class="nav">
-    <nav class="navbar">
-      <ul class="nav-menu">
-        <li>
-          <a href="#menu1" class="li-1" data-target="bodywrap">팀 소개</a>
-        </li>
-        <li>
-          <a href="#menu2" class="li-2" data-target="card-container"
-            >멤버 소개</a
-          >
-        </li>
-      </ul>
-    </nav>
-  </div>
-  
-  
-  
-  
-  
-  <!-- 컨텐츠 -->
-  
-  <div id="content-container">
+    <div class="nav">
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li>
+            <a href="#menu1" class="li-1" data-target="bodywrap">팀 소개</a>
+          </li>
+          <li>
+            <a href="#menu2" class="li-2" data-target="card-container"
+              >멤버 소개</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
 
-    <!-- 시작 페이지 도현 -->
-    <div id="start-page"></div>
+    <!-- 컨텐츠 -->
 
-    <!-- 팀 페이지 정민  -->
-    <div id="team-page">
-      <div class="team-picture">
-        <img src="./images/teamimage.png" />
-      </div>
-      <div class="team-info">
-        <div id="team-info-title">
+    <div id="content-container">
+      <!-- 시작 페이지 도현 -->
+      <div id="start-page"></div>
+
+      <!-- 팀 페이지 정민  -->
+      <div id="team-page">
+        <div class="team-picture">
+          <img src="./images/teamimage.png" />
+        </div>
+        <div class="teamname">
           <h1>밥조</h1>
         </div>
         <div id="team-info-members">
@@ -62,114 +56,175 @@
       </div>
     </div>
 
-    <!-- 멤버 페이지 주하 -->
-    <div id="card-container" >
-      <div id="row1" class="rows">
-        <div id="card1" class="cards">
-          <div class="hover">
-            <p>김도현</p>
-          </div><img src="https://pic.filecast.co.kr/b9/26/b926ae456288a642326d03be3423039a.jpg" alt="loading">
-        </div>
-        <div id="card2" class="cards">
-          <div class="hover">
-            <p>김민경</p>
-          </div><img src="https://i.ytimg.com/vi/vog973bL56k/maxresdefault.jpg" alt="loading">
-        </div>
-        <div id="card3" class="cards">
-          <div class="hover">
-            <p>김선제</p>
-          </div><img src="https://i.ytimg.com/vi/cSwK3BVSsJo/maxresdefault.jpg" alt="loading">
-        </div>
-      </div>
-      <div id="row2" class="rows">
-        <div id="card4" class="cards">
-          <div class="hover">
-            <p>윤주하</p>
-          </div><img
-            src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F999BB1375D27E87D0D"
-            alt="loading">
-        </div>
-        <div id="card5" class="cards">
-          <div class="hover">
-            <p>이정민</p>
-          </div><img src="https://i.ytimg.com/vi/xDWILzBKBBM/maxresdefault.jpg" alt="loading">
-        </div>
-        <div id="addCard" class="cards">
-          <div class="hover">
-            <p>+</p>
-          </div><img src="https://i.ytimg.com/vi/gMujVfD3oGg/maxresdefault.jpg" alt="loading">
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-
-
-    <!-- 멤버 인포 모달창 민경 -->
-
-    <div id="member_modalLayer">
-    <div id="member_modal">
-      <button id="member_modalBtn" type="button">X</button>
-      <div id="member_image">
-      </div>
-
-      <div class="member_info">
-        <h2 id="name"></h2>
-        <p id="mbti"></p>
-        <ul>
-          <li>
-            <p id="hobby_title">HOBBY</p>
-            <p id="hobby"></p>
-          </li>
-          <li>
-            <p id="likes_title">LIKES</p>
-            <p id="likes"></p>
-          </li>
-        </ul>
-        <h3 id="tmi"></h3>
-
-        <ul id="member_links">
-          <li class="vlog">
-          </li>
-          <li class="github">
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-    <!-- 멤버 추가 모달창 -->
-
-    <div id="member_add_layer">
-      <div id="modal__join__container">
-        <button id="add_modalBtn" type="button">X</button>
-        <div class="modal__left">
-          <div class="modal__profile__img">
-            <img src="" class="userImg" alt="" />
-            <div class="profile__img__text">
-              이미지를 눌러 <br />
-              ZEP 캐릭터를 등록해주세요
+      <!-- 멤버 페이지 주하 -->
+      <div id="card-container">
+        <div id="row1" class="rows">
+          <div id="card1" class="cards">
+            <div class="hover">
+              <p>김도현</p>
             </div>
+            <img
+              src="https://pic.filecast.co.kr/b9/26/b926ae456288a642326d03be3423039a.jpg"
+              alt="loading"
+            />
           </div>
-          <input type="file" accept=".png, .jpeg" class="inputImg" />
+          <div id="card2" class="cards">
+            <div class="hover">
+              <p>김민경</p>
+            </div>
+            <img
+              src="https://i.ytimg.com/vi/vog973bL56k/maxresdefault.jpg"
+              alt="loading"
+            />
+          </div>
+          <div id="card3" class="cards">
+            <div class="hover">
+              <p>김선제</p>
+            </div>
+            <img
+              src="https://i.ytimg.com/vi/cSwK3BVSsJo/maxresdefault.jpg"
+              alt="loading"
+            />
+          </div>
         </div>
-        <div class="modal__right">
-          <form action="/upload" method="post" class="modal__form">
-            <input type="text" id="userName" name="userName" required class="textInput" placeholder="성함을 입력해주세요" />
-            <input type="text" id="userPer" name="userPer" required class="textInput" placeholder="MBTI를 입력해주세요" />
-            <input type="text" class="modal__form__long textInput" id="applyReason" name="applyReason" required
-              placeholder="지원동기를 입력해주세요" />
-            <input type="text" id="userHobby" name="userHobby" required class="textInput" placeholder="취미를 입력해주세요" />
-            <input type="text" id="userTmi" name="userTmi" required class="textInput" placeholder="TMI를 하나 입력해주세요" />
-            <input type="text" id="userBlog" name="userBlog" required class="textInput" placeholder="블로그 링크를 입력해주세요" />
-            <input type="text" id="userGit" name="userGit" required class="textInput" placeholder="깃허브 링크를 입력해주세요" />
-          </form>
+        <div id="row2" class="rows">
+          <div id="card4" class="cards">
+            <div class="hover">
+              <p>윤주하</p>
+            </div>
+            <img
+              src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F999BB1375D27E87D0D"
+              alt="loading"
+            />
+          </div>
+          <div id="card5" class="cards">
+            <div class="hover">
+              <p>이정민</p>
+            </div>
+            <img
+              src="https://i.ytimg.com/vi/xDWILzBKBBM/maxresdefault.jpg"
+              alt="loading"
+            />
+          </div>
+          <div id="addCard" class="cards">
+            <div class="hover">
+              <p>+</p>
+            </div>
+            <img
+              src="https://i.ytimg.com/vi/gMujVfD3oGg/maxresdefault.jpg"
+              alt="loading"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- 멤버 인포 모달창 민경 -->
+
+      <div id="member_modalLayer">
+        <div id="member_modal">
+          <button id="member_modalBtn" type="button">X</button>
+          <div id="member_image"></div>
+
+          <div class="member_info">
+            <h2 id="name"></h2>
+            <p id="mbti"></p>
+            <ul>
+              <li>
+                <p id="hobby_title">HOBBY</p>
+                <p id="hobby"></p>
+              </li>
+              <li>
+                <p id="likes_title">LIKES</p>
+                <p id="likes"></p>
+              </li>
+            </ul>
+            <h3 id="tmi"></h3>
+
+            <ul id="member_links">
+              <li class="vlog"></li>
+              <li class="github"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 멤버 추가 모달창 -->
+
+      <div id="member_add_layer">
+        <div id="modal__join__container">
+          <button id="add_modalBtn" type="button">X</button>
+          <div class="modal__left">
+            <div class="modal__profile__img">
+              <img src="" class="userImg" alt="" />
+              <div class="profile__img__text">
+                이미지를 눌러 <br />
+                ZEP 캐릭터를 등록해주세요
+              </div>
+            </div>
+            <input type="file" accept=".png, .jpeg" class="inputImg" />
+          </div>
+          <div class="modal__right">
+            <form action="/upload" method="post" class="modal__form">
+              <input
+                type="text"
+                id="userName"
+                name="userName"
+                required
+                class="textInput"
+                placeholder="성함을 입력해주세요"
+              />
+              <input
+                type="text"
+                id="userPer"
+                name="userPer"
+                required
+                class="textInput"
+                placeholder="MBTI를 입력해주세요"
+              />
+              <input
+                type="text"
+                class="modal__form__long textInput"
+                id="applyReason"
+                name="applyReason"
+                required
+                placeholder="지원동기를 입력해주세요"
+              />
+              <input
+                type="text"
+                id="userHobby"
+                name="userHobby"
+                required
+                class="textInput"
+                placeholder="취미를 입력해주세요"
+              />
+              <input
+                type="text"
+                id="userTmi"
+                name="userTmi"
+                required
+                class="textInput"
+                placeholder="TMI를 하나 입력해주세요"
+              />
+              <input
+                type="text"
+                id="userBlog"
+                name="userBlog"
+                required
+                class="textInput"
+                placeholder="블로그 링크를 입력해주세요"
+              />
+              <input
+                type="text"
+                id="userGit"
+                name="userGit"
+                required
+                class="textInput"
+                placeholder="깃허브 링크를 입력해주세요"
+              />
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
