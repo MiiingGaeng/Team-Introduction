@@ -5,6 +5,10 @@ const content1 = document.querySelector("#team-page");
 const content2 = document.querySelector("#card-container");
 const modal1 = document.querySelector("#member_modalLayer");
 const modal2 = document.querySelector("#member_add_layer");
+
+const btn1 = document.querySelector(".li-1");
+const btn2 = document.querySelector(".li-2");
+
 // 시작
 
 window.onload = function () {
@@ -12,6 +16,7 @@ window.onload = function () {
   content2.classList.add("switch");
   modal1.classList.add("switch");
   modal2.classList.add("switch");
+  // title.classList.add("switch");
 };
 
 //네비버튼
@@ -154,7 +159,6 @@ memberModalBtn.addEventListener("click", () => {
 const addCard = document.querySelector("#addCard");
 const addBtn = document.querySelector("#add_modalBtn");
 
-// on
 addCard.addEventListener("click", () => {
   modal1.classList.add("switch");
   modal2.classList.remove("switch");
@@ -163,11 +167,9 @@ addCard.addEventListener("click", () => {
 const imgSelect = function () {
   let imgClick = document.querySelector(".modal__profile__img");
   let inputClick = document.querySelector(".inputImg");
-  // console.log(imgClick, inputClick);
+  console.log(imgClick, inputClick);
 
   imgClick.addEventListener("click", () => {
-    console.log("??");
-
     inputClick.click();
   });
 };
@@ -179,7 +181,7 @@ const imgChange = function () {
     const imageSrc = URL.createObjectURL(fileDOM.files[0]);
     preview.style.backgroundImage = "url(" + imageSrc + ")";
     preview.style.backgroundSize = "cover";
-    // console.log(imageSrc);
+    console.log(imageSrc);
 
     document.querySelector(".profile__img__text").style.display = "none";
   });

@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bob-jo🍚</title>
-  <link rel="stylesheet" href="./style.css" />
-  <script defer src="./script.js"></script>
-  <script type="module" src="./firebaseScript.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
-  
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bob-jo🍚</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+    <script type="module" src="./firebaseScript.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+  </head>
 
   <body>
     <!--네비게이션 바-->
@@ -41,24 +40,42 @@
         <div class="team-picture">
           <img src="./images/teamimage.png" />
         </div>
-        <div class="teamname">
-          <h1>밥조</h1>
-        </div>
-        <div id="team-info-members">
-          <p>김민경&nbsp;&nbsp;|&nbsp;&nbsp;김도현&nbsp;&nbsp;|&nbsp;&nbsp;김선제&nbsp;&nbsp;|&nbsp;&nbsp;윤주하&nbsp;&nbsp;|&nbsp;&nbsp;이정민</p>
-          <span>feat.&nbsp;(정윤오)</span>
-        </div>
-        <div id="team-info-goal">
-          <p>TEAM GOAL <span>프로젝트 하는동안 소통 잘하자!</span></p>
-          <hr>
-          <p>🌾&nbsp;&nbsp;남동생 있는 사람들 모임 <span class="team-info-right">윤주하 빼고</span> </p>
-          <p>🌾&nbsp;&nbsp;내향인 모임 <span class="team-info-right">김민경 빼고</span> </p>
-          <p>🌾&nbsp;&nbsp;고양이 없는 사람들 모임 <span class="team-info-right">김선제 빼고</span></p>
-          <p>🌾&nbsp;&nbsp;무경력들 모임 <span class="team-info-right">김도현 빼고</span></p>
-          <p>🌾&nbsp;&nbsp;넷플릭스 출연 안해본 사람들 모임 <span class="team-info-right">이정민 빼고</span></p>
+        <div class="team-info">
+          <div id="team-info-title">
+            <h1>밥조</h1>
+          </div>
+          <div id="team-info-members">
+            <p>
+              김민경&nbsp;&nbsp;|&nbsp;&nbsp;김도현&nbsp;&nbsp;|&nbsp;&nbsp;김선제&nbsp;&nbsp;|&nbsp;&nbsp;윤주하&nbsp;&nbsp;|&nbsp;&nbsp;이정민
+            </p>
+            <span>feat.&nbsp;(정윤오)</span>
+          </div>
+          <div id="team-info-goal">
+            <p>TEAM GOAL</p>
+            <hr />
+            <p>
+              🌾&nbsp;&nbsp;남동생 있는 사람들 모임
+              <span class="team-info-right">윤주하 빼고</span>
+            </p>
+            <p>
+              🌾&nbsp;&nbsp;내향인 모임
+              <span class="team-info-right">김민경 빼고</span>
+            </p>
+            <p>
+              🌾&nbsp;&nbsp;고양이 없는 사람들 모임
+              <span class="team-info-right">김선제 빼고</span>
+            </p>
+            <p>
+              🌾&nbsp;&nbsp;무경력들 모임
+              <span class="team-info-right">김도현 빼고</span>
+            </p>
+            <p>
+              🌾&nbsp;&nbsp;넷플릭스 출연 안해본 사람들 모임
+              <span class="team-info-right">이정민 빼고</span>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
       <!-- 멤버 페이지 주하 -->
       <div id="card-container">

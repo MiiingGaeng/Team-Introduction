@@ -30,10 +30,6 @@ body {
   background-color: #fff9ee;
 }
 
-
-
-
-
 /* 네비 */
 .nav {
   font-family: "Gowun Batang", serif;
@@ -48,7 +44,6 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 10;
-  
 
   .nav-menu {
     display: flex;
@@ -65,11 +60,6 @@ body {
   }
 }
 
-
-
-
-
-
 /* 컨텐츠 */
 .switch {
   display: none !important;
@@ -85,7 +75,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
   /* 시작 페이지 */
   #start-page {
     width: 100%;
@@ -101,7 +91,7 @@ body {
     justify-content: center;
     align-items: center;
   }
-  
+
   /* 팀 페이지 정민 */
   #team-page {
     display: flex;
@@ -112,7 +102,7 @@ body {
     height: 500px;
     background-color: #ffffff;
     border-radius: 50px;
-    
+
     .team-picture {
       width: 650px;
       height: 500px;
@@ -120,21 +110,21 @@ body {
       margin: 0px 50px 0px 0px;
       border: 14px solid #ffe595;
       border-radius: 50px;
-      
+
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
     }
-    
+
     .team-info {
       margin-right: 10px;
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-  
+
       #team-info-title {
         font-family: "Gowun Batang", serif;
         margin-top: 40px;
@@ -142,14 +132,14 @@ body {
         color: #4a3716;
         margin-bottom: 10px;
       }
-      
+
       #team-info-members {
         font-size: 20px;
         color: #ffdc73;
         font-weight: 400;
         display: flex;
         gap: 60px;
-  
+
         span {
           font-size: 18px;
           color: #ff6a00;
@@ -164,7 +154,7 @@ body {
         font-weight: 00;
         color: #4a3716;
         margin-top: 50px;
-        
+
         p {
           display: flex;
           justify-content: space-between;
@@ -176,12 +166,6 @@ body {
           color: #ffc720;
         }
 
-        span{
-          color:#4a3716;
-          font-size: 20px;
-          font-weight: 400;
-        }
-  
         hr {
           border: solid 1.5px #ffe595;
           width: 35px;
@@ -192,7 +176,7 @@ body {
       }
     }
   }
-  
+
   /* 멤버 페이지 주하 */
   #card.container {
     width: 1500px;
@@ -256,11 +240,6 @@ body {
     opacity: 1;
   }
 }
-  
-
-
-
-
 
 /* 멤버 인포 모달 민경*/
 
@@ -272,7 +251,7 @@ body {
   top: 0;
   left: 0;
   z-index: 100;
-  
+
   #member_modal {
     position: absolute;
     top: 50%;
@@ -284,11 +263,11 @@ body {
     border-radius: 40px;
     padding: 100px;
     z-index: 101;
-  
+
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    
+
     /* X button */
     #member_modalBtn {
       position: absolute;
@@ -317,8 +296,8 @@ body {
       align-items: center;
       margin-right: 100px;
     }
-    
-    #member_image img{
+
+    #member_image img {
       width: 100%;
       height: 100%;
       width: 400px;
@@ -326,7 +305,7 @@ body {
       border-radius: 50%;
       object-fit: cover;
     }
-    
+
     /* member info */
     .member_info {
       width: 600px;
@@ -336,18 +315,18 @@ body {
       flex-direction: column;
       gap: 10px;
     }
-    
+
     #name {
       font-size: 50px;
       font-family: "Gowun Batang", serif;
       margin-bottom: 15px;
     }
-    
+
     #mbti {
       width: 110px;
       height: 40px;
       border-radius: 20px;
-    
+
       font-size: 20px;
       text-align: center;
       line-height: 45px;
@@ -356,17 +335,17 @@ body {
 
       margin-bottom: 15px;
     }
-    
-    .member_info > ul > li{
+
+    .member_info > ul > li {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      gap:5px;
+      gap: 5px;
       margin-left: 10px;
     }
 
     #hobby_title,
-    #likes_title{
+    #likes_title {
       display: inline-block;
       width: 80px;
       border-radius: 20px;
@@ -379,9 +358,9 @@ body {
     #likes {
       margin-left: 10px;
       font-size: 20px;
-      padding-bottom:1.5px;
+      padding-bottom: 1.5px;
     }
-    
+
     #tmi {
       font-family: "Gowun Batang", serif;
       width: auto;
@@ -395,7 +374,7 @@ body {
       border-radius: 15px;
       color: #333;
     }
-    
+
     #member_links {
       width: 100%;
       height: 50px;
@@ -403,19 +382,19 @@ body {
       align-items: center;
       gap: 20px;
     }
-    
+
     #member_links > li {
       width: 50px;
       height: 50px;
     }
-    
+
     #member_links > li > a {
       display: inline-block;
       width: 100%;
       height: 100%;
     }
-    
-    #member_links > li > a > img{
+
+    #member_links > li > a > img {
       width: 100%;
       height: 100%;
       border-radius: 50%;
@@ -423,9 +402,8 @@ body {
   }
 }
 
-
 /* modal2 */
-#member_add_layer{
+#member_add_layer {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
