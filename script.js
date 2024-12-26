@@ -121,6 +121,7 @@ memberModalBtn.addEventListener("click", () => {
 const addCard = document.querySelector("#addCard");
 const addBtn = document.querySelector("#add_modalBtn");
 
+// on
 addCard.addEventListener("click", () => {
   modal1.classList.add("switch");
   modal2.classList.remove("switch");
