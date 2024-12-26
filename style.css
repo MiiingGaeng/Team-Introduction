@@ -357,7 +357,7 @@ body {
   display: flex;
   justify-items: center;
   align-items: end;
-  background-image: url(./source/pngegg.png);
+  background-image: url(./images/pngegg.png);
   background-position: center;
   background-size: 50%;
   background-repeat: no-repeat;
