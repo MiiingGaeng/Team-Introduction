@@ -34,15 +34,14 @@ document.querySelector("#submit").addEventListener("click", () => {
     }
     console.log(userArr);
   });
-  if (userArr.length == 7) {
+  if (userArr.length == 6) {
     doc = {
       username: userArr[0],
       mbti: userArr[1],
-      reason: userArr[2],
-      hobby: userArr[3],
-      tmi: userArr[4],
-      blog: userArr[5],
-      git: userArr[6],
+      hobby: userArr[2],
+      tmi: userArr[3],
+      blog: userArr[4],
+      git: userArr[5],
     };
     console.log(doc);
   } else {

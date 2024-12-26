@@ -51,11 +51,11 @@
             <span>feat.&nbsp;(정윤오)</span>
           </div>
           <div id="team-info-goal">
-            <p>TEAM GOAL</p>
+            <p>TEAM GOAL <span>프로젝트 동안 소통 잘하기!</span></p>
             <hr />
             <p>
-              🌾&nbsp;&nbsp;남동생 있는 사람들 모임
-              <span class="team-info-right">윤주하 빼고</span>
+              🌾&nbsp;&nbsp;무경력들 모임
+              <span class="team-info-right">김도현 빼고</span>
             </p>
             <p>
               🌾&nbsp;&nbsp;내향인 모임
@@ -66,8 +66,8 @@
               <span class="team-info-right">김선제 빼고</span>
             </p>
             <p>
-              🌾&nbsp;&nbsp;무경력들 모임
-              <span class="team-info-right">김도현 빼고</span>
+              🌾&nbsp;&nbsp;남동생 있는 사람들 모임
+              <span class="team-info-right">윤주하 빼고</span>
             </p>
             <p>
               🌾&nbsp;&nbsp;넷플릭스 출연 안해본 사람들 모임
@@ -79,7 +79,6 @@
 
       <!-- 멤버 페이지 주하 -->
       <div id="card-container">
-        <div id="row1" class="rows">
           <div id="card1" class="cards">
             <div class="hover">
               <p>김도현</p>
@@ -107,8 +106,6 @@
               alt="loading"
             />
           </div>
-        </div>
-        <div id="row2" class="rows">
           <div id="card4" class="cards">
             <div class="hover">
               <p>윤주하</p>
@@ -136,14 +133,13 @@
               alt="loading"
             />
           </div>
-        </div>
       </div>
 
       <!-- 멤버 인포 모달창 민경 -->
 
       <div id="member_modalLayer">
         <div id="member_modal">
-          <button id="member_modalBtn" type="button">X</button>
+          <button id="member_modalBtn" type="button">✕</button>
           <div id="member_image"></div>
 
           <div class="member_info">
@@ -173,7 +169,7 @@
 
       <div id="member_add_layer">
         <div id="modal__join__container">
-          <button id="add_modalBtn" type="button">X</button>
+          <button id="add_modalBtn" type="button">✕</button>
           <div class="modal__left">
             <div class="modal__profile__img">
               <img src="" class="userImg" alt="" />
@@ -186,62 +182,74 @@
           </div>
           <div class="modal__right">
             <form action="/upload" method="post" class="modal__form">
-              <input
-                type="text"
-                id="userName"
-                name="userName"
-                required
-                class="textInput"
-                placeholder="성함을 입력해주세요"
-              />
-              <input
-                type="text"
-                id="userPer"
-                name="userPer"
-                required
-                class="textInput"
-                placeholder="MBTI를 입력해주세요"
-              />
-              <input
-                type="text"
-                class="modal__form__long textInput"
-                id="applyReason"
-                name="applyReason"
-                required
-                placeholder="지원동기를 입력해주세요"
-              />
-              <input
-                type="text"
-                id="userHobby"
-                name="userHobby"
-                required
-                class="textInput"
-                placeholder="취미를 입력해주세요"
-              />
-              <input
-                type="text"
-                id="userTmi"
-                name="userTmi"
-                required
-                class="textInput"
-                placeholder="TMI를 하나 입력해주세요"
-              />
-              <input
-                type="text"
-                id="userBlog"
-                name="userBlog"
-                required
-                class="textInput"
-                placeholder="블로그 링크를 입력해주세요"
-              />
-              <input
-                type="text"
-                id="userGit"
-                name="userGit"
-                required
-                class="textInput"
-                placeholder="깃허브 링크를 입력해주세요"
-              />
+              <label class="add_modal_label">
+              NAME
+                <input
+                  type="text"
+                  id="userName"
+                  name="userName"
+                  required
+                  class="textInput"
+                  placeholder="성함을 입력해주세요"
+                />
+              </label>
+              <label class="add_modal_label">
+                MBTI
+                <input
+                  type="text"
+                  id="userPer"
+                  name="userPer"
+                  required
+                  class="textInput"
+                  placeholder="MBTI를 입력해주세요"
+                />
+              </label>
+              <label class="add_modal_label">
+                HOBBY
+                <input
+                  type="text"
+                  id="userHobby"
+                  name="userHobby"
+                  required
+                  class="textInput"
+                  placeholder="취미를 입력해주세요"
+                />
+              </label>
+              <label class="add_modal_label">
+                TMI
+                <input
+                  type="text"
+                  id="userTmi"
+                  name="userTmi"
+                  required
+                  class="textInput"
+                  placeholder="TMI를 하나 입력해주세요"
+                />
+              </label>
+              <label class="add_modal_label">
+                VLOG
+                <input
+                  type="text"
+                  id="userBlog"
+                  name="userBlog"
+                  required
+                  class="textInput"
+                  placeholder="블로그 링크를 입력해주세요"
+                />
+              </label>
+              <label class="add_modal_label">
+                GITHUB
+                <input
+                  type="text"
+                  id="userGit"
+                  name="userGit"
+                  required
+                  class="textInput"
+                  placeholder="깃허브 링크를 입력해주세요"
+                />
+              </label>
+
+              <button id="submit_btn" type="button">등록하기</button>
             </form>
           </div>
         </div>
