@@ -199,19 +199,22 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     padding: 0 20px;
+    padding-top: 100px;
+    padding-bottom: 30px;
 
     .cards {
-      width: 400px;
-      height: 400px;
+      width: 350px;
+      height: 350px;
       margin-left: 100px;
       margin-bottom: 50px;
       position: relative;
 
       img {
-        width: 400px;
-        height: 400px;
+        width: 350px;
+        height: 350px;
         border-radius: 50%;
         object-fit: cover;
       }
@@ -228,8 +231,8 @@ body {
       position: absolute;
       margin: 0;
       padding: 0;
-      width: 400px;
-      height: 400px;
+      width: 350px;
+      height: 350px;
       background-color: rgba(185, 102, 0, 0.872);
       border-radius: 50%;
       display: flex;
