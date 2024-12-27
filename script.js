@@ -1,4 +1,25 @@
 //변수
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+import {
+  getFirestore,
+  addDoc,
+  collection,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+// Firebase 구성 정보
+const firebaseConfig = {
+  apiKey: "AIzaSyD_G_08iBIVR1VBizfwuV8O5O-dgG0_AM4",
+  authDomain: "team-c63b4.firebaseapp.com",
+  projectId: "team-c63b4",
+  storageBucket: "team-c63b4.firebasestorage.app",
+  messagingSenderId: "540277860895",
+  appId: "1:540277860895:web:16c07e14378222a965432a",
+  measurementId: "G-8KKLB1HY80",
+};
+// Firebase 앱 초기화
+const app = initializeApp(firebaseConfig);
+// Firestore 초기화
+const db = getFirestore(app);
 
 const title = document.querySelector("#start-page");
 const content1 = document.querySelector("#team-page");
@@ -17,6 +38,7 @@ window.onload = function () {
   modal1.classList.add("switch");
   modal2.classList.add("switch");
   // title.classList.add("switch");
+  memberLoad();
 };
 
 //네비버튼
@@ -58,7 +80,7 @@ var member = [
     vlogLink: "https://velog.io/@doni_kim/posts",
     gitLink: "https://github.com/woodie2933",
     imageSrc: "./images/도현.png",
-    heart: "♡"
+    heart: "♡",
   },
   {
     name: "김민경",
@@ -69,7 +91,7 @@ var member = [
     vlogLink: "https://velog.io/@miiing_gaeng/posts",
     gitLink: "https://github.com/MiiingGaeng",
     imageSrc: "./images/민경.png",
-    heart: "♡"
+    heart: "♡",
   },
   {
     name: "김선제",
@@ -80,7 +102,7 @@ var member = [
     vlogLink: "https://seondev01.tistory.com/",
     gitLink: "https://github.com/UrePu",
     imageSrc: "./images/선제.png",
-    heart: "♡"
+    heart: "♡",
   },
   {
     name: "윤주하",
@@ -91,7 +113,7 @@ var member = [
     vlogLink: "https://ijooha.tistory.com/",
     gitLink: "https://github.com/ijooha16",
     imageSrc: "./images/주하.png",
-    heart: "♡"
+    heart: "♡",
   },
   {
     name: "이정민",
@@ -102,7 +124,7 @@ var member = [
     vlogLink: "https://jungmin7618.tistory.com/",
     gitLink: "https://github.com/JungminLee97",
     imageSrc: "./images/정민.png",
-    heart: "♡"
+    heart: "♡",
   },
 ];
 
@@ -117,53 +139,55 @@ const memberVlogLink = document.querySelector(".vlog");
 const memberGitLink = document.querySelector(".github");
 const memberModalBtn = document.querySelector("#member_modalBtn");
 
+let memberCardsReload = () => {
+  let memberCards = document.querySelectorAll(".cards");
+  for (let i = 1; i < memberCards.length; i++) {
+    console.log(memberCards);
 
-const memberCards = document.querySelectorAll(".cards");
-memberCards.forEach((card, i) => {
-  card.addEventListener("click", () => {
-    modal1.classList.remove("switch");
+    memberCards[i].addEventListener("click", () => {
+      modal1.classList.remove("switch");
 
-    memberName.innerText = `${member[i].name}`;
-    memberMbti.innerText = `${member[i].mbti}`;
-    memberHobby.innerText = `${member[i].hobby}`;
-    memberLikes.innerText = `${member[i].likes}`;
-    memberTmi.innerText = `${member[i].tmi}`;
+      memberName.innerText = `${member[i - 1].name}`;
+      memberMbti.innerText = `${member[i - 1].mbti}`;
+      memberHobby.innerText = `${member[i - 1].hobby}`;
+      memberLikes.innerText = `${member[i - 1].likes}`;
+      memberTmi.innerText = `${member[i - 1].tmi}`;
 
-    memberImage.innerHTML = `<img src="${member[i].imageSrc}">`;
+      memberImage.innerHTML = `<img src="${member[i - 1].imageSrc}">`;
 
-    memberHeart.innerHTML = `♡`
-    if (member[i].heart === "♡") {
-      memberHeart.addEventListener("click", () => {
+      memberHeart.innerHTML = `♡`;
+      if (member[i - 1].heart === "♡") {
+        memberHeart.addEventListener("click", () => {
+          memberHeart.innerText = "♥︎";
+          memberHeart.style.color = "#ff6a00";
+          member[i - 1].heart = "♥︎";
+        });
+      } else {
         memberHeart.innerText = "♥︎";
-        memberHeart.style.color = "#ff6a00";
-        member[i].heart = "♥︎";
-      });
-    }else{
-      memberHeart.innerText = "♥︎";
-    }
+      }
 
-    if (member[i].vlogLink.includes("tistory")) {
-      memberVlogLink.innerHTML = `
-      <a href="${member[i].vlogLink}" target="_blank">
-        <img src="./images/tstorylogo.png" alt="vlog">
-      </a>
-      `;
-    } else {
-      memberVlogLink.innerHTML = `
-      <a href="${member[i].vlogLink}" target="_blank">
-        <img src="./images/velog_logo.jpeg" alt="vlog">
-      </a>
-      `;
-    }
+      if (member[i - 1].vlogLink.includes("tistory")) {
+        memberVlogLink.innerHTML = `
+        <a href="${member[i - 1].vlogLink}" target="_blank">
+          <img src="./images/tstorylogo.png" alt="vlog">
+        </a>
+        `;
+      } else {
+        memberVlogLink.innerHTML = `
+        <a href="${member[i - 1].vlogLink}" target="_blank">
+          <img src="./images/velog_logo.jpeg" alt="vlog">
+        </a>
+        `;
+      }
 
-    memberGitLink.innerHTML = `
-      <a href="${member[i].gitLink}" target="_blank">
-        <img src="./images/github_logo.svg" alt="vlog">
-      </a>
-      `;
+      memberGitLink.innerHTML = `
+        <a href="${member[i - 1].gitLink}" target="_blank">
+          <img src="./images/github_logo.svg" alt="vlog">
+        </a>
+        `;
     });
-  });
-  
+  }
+};
 
 // off
 memberModalBtn.addEventListener("click", () => {
@@ -171,11 +195,6 @@ memberModalBtn.addEventListener("click", () => {
     modal1.classList.add("switch");
   }
 });
-
-
-
-
-
 //멤버추가 모달
 const addCard = document.querySelector("#addCard");
 const addBtn = document.querySelector("#add_modalBtn");
@@ -186,29 +205,30 @@ addCard.addEventListener("click", () => {
   modal2.classList.remove("switch");
 });
 
-const imgSelect = function () {
-  let imgClick = document.querySelector(".modal__profile__img");
-  let inputClick = document.querySelector(".inputImg");
-  console.log(imgClick, inputClick);
+// const imgSelect = function () {
+//   let imgClick = document.querySelector(".modal__profile__img");
+//   let inputClick = document.querySelector(".inputImg");
+//   console.log(imgClick, inputClick);
 
-  imgClick.addEventListener("click", () => {
-    inputClick.click();
-  });
-};
-imgSelect();
-const imgChange = function () {
-  const fileDOM = document.querySelector(".inputImg");
-  const preview = document.querySelector(".modal__profile__img");
-  fileDOM.addEventListener("change", () => {
-    const imageSrc = URL.createObjectURL(fileDOM.files[0]);
-    preview.style.backgroundImage = "url(" + imageSrc + ")";
-    preview.style.backgroundSize = "cover";
-    console.log(imageSrc);
+//   imgClick.addEventListener("click", () => {
+//     inputClick.click();
+//   });
+// };
+// imgSelect();
+// const imgChange = function () {
+//   const fileDOM = document.querySelector(".inputImg");
+//   const preview = document.querySelector(".modal__profile__img");
+//   fileDOM.addEventListener("change", () => {
+//     const imageSrc = URL.createObjectURL(fileDOM.files[0]);
+//     preview.style.backgroundImage = "url(" + imageSrc + ")";
+//     preview.style.backgroundSize = "cover";
+//     console.log(imageSrc);
+//     document.querySelector(".profile__img__text").style.display = "none";
 
-    document.querySelector(".profile__img__text").style.display = "none";
-  });
-};
-imgChange();
+//     return imageSrc;
+//   });
+// };
+// imgChange();
 
 // off
 addBtn.addEventListener("click", () => {
@@ -216,3 +236,140 @@ addBtn.addEventListener("click", () => {
     modal2.classList.add("switch");
   }
 });
+//
+
+let doc = {};
+document.querySelector("#submit_btn").addEventListener("click", () => {
+  console.log("a");
+
+  doc = {};
+  let user = document.querySelectorAll(".textInput");
+  let userArr = [];
+  user.forEach((a) => {
+    console.log(a.value);
+
+    if (a.value) {
+      userArr.push(a.value);
+    }
+    console.log(userArr);
+  });
+
+  console.log(userArr);
+
+  if (userArr.length == 8) {
+    doc = {
+      image: userArr[0],
+      username: userArr[1],
+      mbti: userArr[2],
+      hobby: userArr[3],
+      likes: userArr[4],
+      tmi: userArr[5],
+      blog: userArr[6],
+      git: userArr[7],
+    };
+    close();
+    addData();
+  } else {
+    alert("입력 확인해주세요.");
+  }
+});
+
+const addData = async () => {
+  await addDoc(collection(db, "members"), doc);
+};
+
+//
+
+const close = () => {
+  const modal2 = document.querySelector("#member_add_layer");
+  document.querySelector("#submit_btn").addEventListener("click", () => {
+    if (!modal2.classList.contains("switch")) {
+      modal2.classList.add("switch");
+    }
+  });
+};
+
+let userImg = document.querySelector("#userimg");
+userImg.addEventListener("change", () => {
+  console.log("!");
+  const preview = document.querySelector(".modal__profile__img");
+  preview.style.backgroundImage = "url(" + userImg.value + ")";
+  preview.style.backgroundSize = "cover";
+  document.querySelector(".profile__img__text").style.display = "none";
+});
+
+const memberLoad = function () {
+  let memberCards = document.querySelectorAll(".cards");
+
+  fetchCollectionData();
+  // 새로운 카드 생성
+  for (let i = 5; i < memberCards.length; i++) {}
+  const newCard = document.createElement("div");
+  newCard.className = "cards";
+
+  // 새로운 카드의 콘텐츠 추가
+  newCard.innerHTML = `
+    <div class="hover">
+      <p>새 멤버</p>
+    </div>
+    <img
+      src="https://via.placeholder.com/150"
+      alt="New Member"
+    />
+  `;
+  memberCardsReload();
+  // 새로운 카드를 컨테이너에 추가
+  content2.appendChild(newCard);
+};
+
+const fetchCollectionData = async () => {
+  try {
+    const querySnapshot = await getDocs(collection(db, "members"));
+
+    const data = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    console.log(data);
+
+    data.forEach((x, i) => {
+      member[i + 5] = {
+        name: x.username,
+        mbti: x.mbit,
+        hobby: x.hobby,
+        likes: x.likes,
+        tmi: x.tmi,
+        vlogLink: x.blog,
+        gitLink: x.git,
+        imageSrc: x.image,
+        heart: "♡",
+      };
+    });
+    console.log(member);
+
+    // member
+  } catch (error) {
+    console.error("Error fetching documents: ", error);
+  }
+};
+
+// $("#id").click(async function () {
+//   let doc = {};
+//   await addDoc(collection(db, "콜렉션이름"), doc);
+// });
+
+// let docs = await getDocs(collection(db, "콜렉션이름"));
+// docs.forEach((doc) => {
+//   let row = doc.data();
+//   console.log(row);
+// });
+
+// name: "김도현",
+// mbti: "INTJ",
+// hobby: "음악작업 / 사진촬영 / 영상편집",
+// likes: "귀여운 동물친구들",
+// tmi: "미용실 안간지 7년됐습니다! 자연펌 개꿀",
+// vlogLink: "https://velog.io/@doni_kim/posts",
+// gitLink: "https://github.com/woodie2933",
+// imageSrc: "./images/도현.png",
+// heart: "♡"

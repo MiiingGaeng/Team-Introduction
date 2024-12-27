@@ -172,7 +172,7 @@ body {
           color: #ffc720;
         }
 
-        span{
+        span {
           font-weight: 400;
           font-size: 20px;
         }
@@ -184,7 +184,7 @@ body {
       }
       .team-info-right {
         font-size: 20px;
-        color:#4a3716;
+        color: #4a3716;
         font-weight: 400;
         text-align: right;
       }
@@ -200,7 +200,7 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    padding:0 20px;
+    padding: 0 20px;
 
     .cards {
       width: 400px;
@@ -216,38 +216,37 @@ body {
       }
     }
 
-    .cards:nth-of-type(3n+1){
+    .cards:nth-of-type(3n + 1) {
       margin-left: 0;
     }
 
+    /* 멤버카드 호버 주하 */
 
-      /* 멤버카드 호버 주하 */
-    
-      .hover {
-        font-family: "Gowun Batang", serif;
-        position: absolute;
-        margin: 0;
-        padding: 0;
-        width: 400px;
-        height: 400px;
-        background-color: rgba(185, 102, 0, 0.872);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 70px;
-        color: white;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-      }
-    
-      .cards:hover {
-        transform: scale(1.1);
-      }
-    
-      .cards:hover .hover {
-        opacity: 1;
-      }
+    .hover {
+      font-family: "Gowun Batang", serif;
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      width: 400px;
+      height: 400px;
+      background-color: rgba(185, 102, 0, 0.872);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 70px;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .cards:hover {
+      transform: scale(1.1);
+    }
+
+    .cards:hover .hover {
+      opacity: 1;
+    }
   }
 }
 
@@ -326,14 +325,15 @@ body {
       gap: 10px;
     }
 
-    #member_info_head{
+    #member_info_head {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      .heart{
+      .heart {
         font-size: 35px;
-        color:#999;
+        color: #999;
+        user-select: none;
       }
     }
 
@@ -424,6 +424,10 @@ body {
 }
 
 /* modal2 */
+.modal__left {
+  display: flex;
+  flex-direction: column;
+}
 #member_add_layer {
   width: 100vw;
   height: 100vh;
@@ -432,6 +436,7 @@ body {
   top: 0;
   left: 0;
   z-index: 100;
+  overflow-y: auto;
 
   #modal__join__container {
     position: absolute;
@@ -444,11 +449,10 @@ body {
     border-radius: 40px;
     padding: 50px;
     z-index: 101;
-  
+
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-
 
     #add_modalBtn {
       position: absolute;
@@ -466,7 +470,7 @@ body {
       cursor: pointer;
       transition: all 0.3s;
     }
-    
+
     #add_modalBtn:hover {
       opacity: 1;
     }
@@ -484,11 +488,11 @@ body {
       background-size: 35%;
       background-repeat: no-repeat;
     }
-    
+
     .inputImg {
       display: none;
     }
-    
+
     .profile__img__text {
       padding-left: 100px;
       padding-bottom: 50px;
@@ -506,10 +510,12 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
         width: 100%;
+        height: 500px;
+        overflow-y: auto;
+        padding-top: 50px;
 
-        .add_modal_label{
+        .add_modal_label {
           width: 80%;
           display: flex;
           justify-content: space-between;
@@ -519,47 +525,37 @@ body {
           .textInput {
             width: 250px;
             height: 50px;
-            border:none;
+            border: none;
             background: #fff;
             border-radius: 10px;
             padding: 0 20px;
-            margin:10px 0;
+            margin: 10px 0;
           }
 
           .textInput::placeholder {
             color: #abb4bd;
-            }
+          }
 
           .textInput:focus {
             outline: none;
           }
         }
-
-        #submit_btn{
-          width: 60%;
-          height: 50px;
-          background: #ff6a00;
-          color:#fff;
-          border: none;
-          border-radius: 25px;
-          font-size: 17px;
-          margin-top: 20px;
-          align-self: center;
-        }
       }
     }
-
   }
 }
 
-
-
-
-
-
-
-
-
+#submit_btn {
+  width: 60%;
+  height: 50px;
+  background: #ff6a00;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 17px;
+  margin-top: 20px;
+  align-self: center;
+}
 .modal__form__long {
   width: 410px !important;
 }

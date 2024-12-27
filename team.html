@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bob-jo🍚</title>
     <link rel="stylesheet" href="./style.css" />
-    <script defer src="./script.js"></script>
-    <script type="module" src="./firebaseScript.js"></script>
+    <script type="module" defer src="./script.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
   </head>
@@ -79,60 +78,60 @@
 
       <!-- 멤버 페이지 주하 -->
       <div id="card-container">
-          <div id="card1" class="cards">
-            <div class="hover">
-              <p>김도현</p>
-            </div>
-            <img
-              src="https://pic.filecast.co.kr/b9/26/b926ae456288a642326d03be3423039a.jpg"
-              alt="loading"
-            />
+        <div id="addCard" class="cards">
+          <div class="hover">
+            <p>+</p>
           </div>
-          <div id="card2" class="cards">
-            <div class="hover">
-              <p>김민경</p>
-            </div>
-            <img
-              src="https://i.ytimg.com/vi/vog973bL56k/maxresdefault.jpg"
-              alt="loading"
-            />
+          <img
+            src="https://i.ytimg.com/vi/gMujVfD3oGg/maxresdefault.jpg"
+            alt="loading"
+          />
+        </div>
+        <div class="cards">
+          <div class="hover">
+            <p>김도현</p>
           </div>
-          <div id="card3" class="cards">
-            <div class="hover">
-              <p>김선제</p>
-            </div>
-            <img
-              src="https://i.ytimg.com/vi/cSwK3BVSsJo/maxresdefault.jpg"
-              alt="loading"
-            />
+          <img
+            src="https://pic.filecast.co.kr/b9/26/b926ae456288a642326d03be3423039a.jpg"
+            alt="loading"
+          />
+        </div>
+        <div class="cards">
+          <div class="hover">
+            <p>김민경</p>
           </div>
-          <div id="card4" class="cards">
-            <div class="hover">
-              <p>윤주하</p>
-            </div>
-            <img
-              src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F999BB1375D27E87D0D"
-              alt="loading"
-            />
+          <img
+            src="https://i.ytimg.com/vi/vog973bL56k/maxresdefault.jpg"
+            alt="loading"
+          />
+        </div>
+        <div class="cards">
+          <div class="hover">
+            <p>김선제</p>
           </div>
-          <div id="card5" class="cards">
-            <div class="hover">
-              <p>이정민</p>
-            </div>
-            <img
-              src="https://i.ytimg.com/vi/xDWILzBKBBM/maxresdefault.jpg"
-              alt="loading"
-            />
+          <img
+            src="https://i.ytimg.com/vi/cSwK3BVSsJo/maxresdefault.jpg"
+            alt="loading"
+          />
+        </div>
+        <div class="cards">
+          <div class="hover">
+            <p>윤주하</p>
           </div>
-          <div id="addCard" class="cards">
-            <div class="hover">
-              <p>+</p>
-            </div>
-            <img
-              src="https://i.ytimg.com/vi/gMujVfD3oGg/maxresdefault.jpg"
-              alt="loading"
-            />
+          <img
+            src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F999BB1375D27E87D0D"
+            alt="loading"
+          />
+        </div>
+        <div class="cards">
+          <div class="hover">
+            <p>이정민</p>
           </div>
+          <img
+            src="https://i.ytimg.com/vi/xDWILzBKBBM/maxresdefault.jpg"
+            alt="loading"
+          />
+        </div>
       </div>
 
       <!-- 멤버 인포 모달창 민경 -->
@@ -175,18 +174,26 @@
           <button id="add_modalBtn" type="button">✕</button>
           <div class="modal__left">
             <div class="modal__profile__img">
-              <img src="" class="userImg" alt="" />
-              <div class="profile__img__text">
-                이미지를 눌러 <br />
-                ZEP 캐릭터를 등록해주세요
-              </div>
+              <div class="profile__img__text">ZEP 캐릭터를 등록해주세요</div>
             </div>
             <input type="file" accept=".png, .jpeg" class="inputImg" />
+            <button id="submit_btn" type="button">등록하기</button>
           </div>
           <div class="modal__right">
-            <form action="/upload" method="post" class="modal__form">
+            <div class="modal__form">
               <label class="add_modal_label">
-              NAME
+                IMGLINK
+                <input
+                  type="text"
+                  id="userimg"
+                  name="userimg"
+                  required
+                  class="textInput"
+                  placeholder="이미지 주소를 입력해주세요"
+                />
+              </label>
+              <label class="add_modal_label">
+                NAME
                 <input
                   type="text"
                   id="userName"
@@ -216,6 +223,17 @@
                   required
                   class="textInput"
                   placeholder="취미를 입력해주세요"
+                />
+              </label>
+              <label class="add_modal_label">
+                LIKES
+                <input
+                  type="text"
+                  id="userLikes"
+                  name="userLikes"
+                  required
+                  class="textInput"
+                  placeholder="좋아하는것을 입력해주세요"
                 />
               </label>
               <label class="add_modal_label">
@@ -251,9 +269,7 @@
                   placeholder="깃허브 링크를 입력해주세요"
                 />
               </label>
-
-              <button id="submit_btn" type="button">등록하기</button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
