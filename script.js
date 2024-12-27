@@ -118,8 +118,6 @@ const memberGitLink = document.querySelector(".github");
 const memberModalBtn = document.querySelector("#member_modalBtn");
 
 
-console.log(memberVlogLink);
-
 const memberCards = document.querySelectorAll(".cards");
 memberCards.forEach((card, i) => {
   card.addEventListener("click", () => {
@@ -136,11 +134,13 @@ memberCards.forEach((card, i) => {
     memberHeart.innerHTML = `♡`
     if (member[i].heart === "♡") {
       memberHeart.addEventListener("click", () => {
+        memberHeart.innerText = "♥︎";
+        memberHeart.style.color = "#ff6a00";
         member[i].heart = "♥︎";
-        heart.style.color = "#ff6a00";
-        heart.innerText = "♥︎";
       });
-    };
+    }else{
+      memberHeart.innerText = "♥︎";
+    }
 
     if (member[i].vlogLink.includes("tistory")) {
       memberVlogLink.innerHTML = `
