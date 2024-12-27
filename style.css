@@ -207,6 +207,7 @@ body {
       height: 400px;
       margin-left: 100px;
       margin-bottom: 50px;
+      position: relative;
 
       img {
         width: 400px;

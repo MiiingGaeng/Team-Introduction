@@ -1,4 +1,3 @@
-//변수
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import {
   getFirestore,
@@ -6,7 +5,6 @@ import {
   collection,
   getDocs,
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-
 
 // Firebase 구성 정보
 const firebaseConfig = {
@@ -23,6 +21,9 @@ const app = initializeApp(firebaseConfig);
 // Firestore 초기화
 const db = getFirestore(app);
 
+
+
+//변수
 const title = document.querySelector("#start-page");
 const content1 = document.querySelector("#team-page");
 const content2 = document.querySelector("#card-container");
@@ -32,19 +33,19 @@ const modal2 = document.querySelector("#member_add_layer");
 const btn1 = document.querySelector(".li-1");
 const btn2 = document.querySelector(".li-2");
 
-// 시작
 
+
+// 시작
 window.onload = function () {
   content1.classList.add("switch");
   content2.classList.add("switch");
   modal1.classList.add("switch");
   modal2.classList.add("switch");
-  // title.classList.add("switch");
   memberLoad();
+  // title.classList.add("switch");
 };
 
 //네비버튼
-
 // 팀소개
 btn1.addEventListener("click", () => {
   if (
@@ -145,7 +146,7 @@ let memberCardsReload = () => {
   console.log("?");
   let memberCards = document.querySelectorAll(".cards");
   for (let i = 1; i < memberCards.length; i++) {
-    console.log(memberCards);
+    // console.log(memberCards);
 
     memberCards[i].addEventListener("click", () => {
       modal1.classList.remove("switch");
@@ -198,6 +199,9 @@ memberModalBtn.addEventListener("click", () => {
     modal1.classList.add("switch");
   }
 });
+
+
+
 //멤버추가 모달
 const addCard = document.querySelector("#addCard");
 const addBtn = document.querySelector("#add_modalBtn");
@@ -207,31 +211,6 @@ addCard.addEventListener("click", () => {
   modal1.classList.add("switch");
   modal2.classList.remove("switch");
 });
-
-// const imgSelect = function () {
-//   let imgClick = document.querySelector(".modal__profile__img");
-//   let inputClick = document.querySelector(".inputImg");
-//   console.log(imgClick, inputClick);
-
-//   imgClick.addEventListener("click", () => {
-//     inputClick.click();
-//   });
-// };
-// imgSelect();
-// const imgChange = function () {
-//   const fileDOM = document.querySelector(".inputImg");
-//   const preview = document.querySelector(".modal__profile__img");
-//   fileDOM.addEventListener("change", () => {
-//     const imageSrc = URL.createObjectURL(fileDOM.files[0]);
-//     preview.style.backgroundImage = "url(" + imageSrc + ")";
-//     preview.style.backgroundSize = "cover";
-//     console.log(imageSrc);
-//     document.querySelector(".profile__img__text").style.display = "none";
-
-//     return imageSrc;
-//   });
-// };
-// imgChange();
 
 // off
 addBtn.addEventListener("click", () => {
@@ -254,10 +233,7 @@ document.querySelector("#submit_btn").addEventListener("click", () => {
     if (a.value) {
       userArr.push(a.value);
     }
-    console.log(userArr);
   });
-
-  console.log(userArr);
 
   if (userArr.length == 8) {
     doc = {
@@ -270,8 +246,8 @@ document.querySelector("#submit_btn").addEventListener("click", () => {
       blog: userArr[6],
       git: userArr[7],
     };
-    close();
     addData();
+    close();
   } else {
     alert("입력 확인해주세요.");
   }
@@ -284,12 +260,9 @@ const addData = async () => {
 //
 
 const close = () => {
-  const modal2 = document.querySelector("#member_add_layer");
-  document.querySelector("#submit_btn").addEventListener("click", () => {
-    if (!modal2.classList.contains("switch")) {
-      modal2.classList.add("switch");
-    }
-  });
+  if (!modal2.classList.contains("switch")) {
+    modal2.classList.add("switch");
+  }
 };
 
 let userImg = document.querySelector("#userimg");
@@ -301,28 +274,42 @@ userImg.addEventListener("change", () => {
   document.querySelector(".profile__img__text").style.display = "none";
 });
 
-const memberLoad = function () {
-  // let memberCards = document.querySelectorAll(".cards");
+let randomImg = () => {
+  let rNum = Math.floor(Math.random() * 4) + 1;
 
-  // fetchCollectionData();
+  return rNum;
+};
+
+const memberLoad = async function () {
+  await fetchCollectionData();
   // 새로운 카드 생성
-  // for (let i = 5; i < memberCards.length; i++) {}
-  const newCard = document.createElement("div");
-  newCard.className = "cards";
+  let memberCards = document.querySelectorAll(".cards");
+  for (let i = 5; i < member.length; i++) {
+    const newCard = document.createElement("div");
+    newCard.className = "cards";
 
-  // 새로운 카드의 콘텐츠 추가
-  newCard.innerHTML = `
+    // 새로운 카드의 콘텐츠 추가
+
+    newCard.innerHTML =
+      `
     <div class="hover">
-      <p>새 멤버</p>
+      <p>` +
+      member[i].name +
+      `</p>
     </div>
     <img
-      src="https://via.placeholder.com/150"
+      src="./images/` +
+      randomImg() +
+      `.png"
       alt="New Member"
     />
   `;
 
+    console.log(i);
+    content2.appendChild(newCard);
+  }
   // 새로운 카드를 컨테이너에 추가
-  content2.appendChild(newCard);
+
   memberCardsReload();
 };
 
@@ -334,6 +321,7 @@ const fetchCollectionData = async () => {
       id: doc.id,
       ...doc.data(),
     }));
+    // console.log(data);
     console.log(data);
 
     data.forEach((x, i) => {
@@ -349,6 +337,7 @@ const fetchCollectionData = async () => {
         heart: "♡",
       };
     });
+
     console.log(member);
 
     // member
@@ -356,24 +345,3 @@ const fetchCollectionData = async () => {
     console.error("Error fetching documents: ", error);
   }
 };
-
-// $("#id").click(async function () {
-//   let doc = {};
-//   await addDoc(collection(db, "콜렉션이름"), doc);
-// });
-
-// let docs = await getDocs(collection(db, "콜렉션이름"));
-// docs.forEach((doc) => {
-//   let row = doc.data();
-//   console.log(row);
-// });
-
-// name: "김도현",
-// mbti: "INTJ",
-// hobby: "음악작업 / 사진촬영 / 영상편집",
-// likes: "귀여운 동물친구들",
-// tmi: "미용실 안간지 7년됐습니다! 자연펌 개꿀",
-// vlogLink: "https://velog.io/@doni_kim/posts",
-// gitLink: "https://github.com/woodie2933",
-// imageSrc: "./images/도현.png",
-// heart: "♡"
