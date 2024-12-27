@@ -144,7 +144,7 @@ let memberCardsReload = () => {
   console.log("?");
   let memberCards = document.querySelectorAll(".cards");
   for (let i = 1; i < memberCards.length; i++) {
-    console.log(memberCards);
+    // console.log(memberCards);
 
     memberCards[i].addEventListener("click", () => {
       modal1.classList.remove("switch");
@@ -253,10 +253,10 @@ document.querySelector("#submit_btn").addEventListener("click", () => {
     if (a.value) {
       userArr.push(a.value);
     }
-    console.log(userArr);
+    // console.log(userArr);
   });
 
-  console.log(userArr);
+  // console.log(userArr);
 
   if (userArr.length == 8) {
     doc = {
@@ -269,8 +269,8 @@ document.querySelector("#submit_btn").addEventListener("click", () => {
       blog: userArr[6],
       git: userArr[7],
     };
-    close();
     addData();
+    close();
   } else {
     alert("입력 확인해주세요.");
   }
@@ -283,12 +283,9 @@ const addData = async () => {
 //
 
 const close = () => {
-  const modal2 = document.querySelector("#member_add_layer");
-  document.querySelector("#submit_btn").addEventListener("click", () => {
-    if (!modal2.classList.contains("switch")) {
-      modal2.classList.add("switch");
-    }
-  });
+  if (!modal2.classList.contains("switch")) {
+    modal2.classList.add("switch");
+  }
 };
 
 let userImg = document.querySelector("#userimg");
@@ -307,11 +304,11 @@ let randomImg = () => {
 };
 
 const memberLoad = async function () {
-  let memberCards = document.querySelectorAll(".cards");
   await fetchCollectionData();
   // 새로운 카드 생성
-  const newCard = document.createElement("div");
-  for (let i = 5; i < memberCards.length; i++) {
+  let memberCards = document.querySelectorAll(".cards");
+  for (let i = 5; i < member.length; i++) {
+    const newCard = document.createElement("div");
     newCard.className = "cards";
 
     // 새로운 카드의 콘텐츠 추가
@@ -330,9 +327,12 @@ const memberLoad = async function () {
       alt="New Member"
     />
   `;
+
+    console.log(i);
+    content2.appendChild(newCard);
   }
   // 새로운 카드를 컨테이너에 추가
-  content2.appendChild(newCard);
+
   memberCardsReload();
 };
 
@@ -345,6 +345,7 @@ const fetchCollectionData = async () => {
       ...doc.data(),
     }));
     // console.log(data);
+    console.log(data);
 
     data.forEach((x, i) => {
       member[i + 5] = {
@@ -360,7 +361,7 @@ const fetchCollectionData = async () => {
       };
     });
 
-    // console.log(member);
+    console.log(member);
 
     // member
   } catch (error) {
