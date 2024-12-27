@@ -41,6 +41,7 @@ window.onload = function () {
   // title.classList.add("switch");
 };
 
+
 //네비버튼
 // 팀소개
 btn1.addEventListener("click", () => {
