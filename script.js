@@ -58,6 +58,7 @@ var member = [
     vlogLink: "https://velog.io/@doni_kim/posts",
     gitLink: "https://github.com/woodie2933",
     imageSrc: "./images/도현.png",
+    heart: "♡"
   },
   {
     name: "김민경",
@@ -68,6 +69,7 @@ var member = [
     vlogLink: "https://velog.io/@miiing_gaeng/posts",
     gitLink: "https://github.com/MiiingGaeng",
     imageSrc: "./images/민경.png",
+    heart: "♡"
   },
   {
     name: "김선제",
@@ -78,6 +80,7 @@ var member = [
     vlogLink: "https://seondev01.tistory.com/",
     gitLink: "https://github.com/UrePu",
     imageSrc: "./images/선제.png",
+    heart: "♡"
   },
   {
     name: "윤주하",
@@ -88,6 +91,7 @@ var member = [
     vlogLink: "https://ijooha.tistory.com/",
     gitLink: "https://github.com/ijooha16",
     imageSrc: "./images/주하.png",
+    heart: "♡"
   },
   {
     name: "이정민",
@@ -98,11 +102,13 @@ var member = [
     vlogLink: "https://jungmin7618.tistory.com/",
     gitLink: "https://github.com/JungminLee97",
     imageSrc: "./images/정민.png",
+    heart: "♡"
   },
 ];
 
 const memberImage = document.querySelector("#member_image");
 const memberName = document.querySelector("#name");
+const memberHeart = document.querySelector(".heart");
 const memberMbti = document.querySelector("#mbti");
 const memberHobby = document.querySelector("#hobby");
 const memberLikes = document.querySelector("#likes");
@@ -110,6 +116,7 @@ const memberTmi = document.querySelector("#tmi");
 const memberVlogLink = document.querySelector(".vlog");
 const memberGitLink = document.querySelector(".github");
 const memberModalBtn = document.querySelector("#member_modalBtn");
+
 
 console.log(memberVlogLink);
 
@@ -126,27 +133,37 @@ memberCards.forEach((card, i) => {
 
     memberImage.innerHTML = `<img src="${member[i].imageSrc}">`;
 
+    memberHeart.innerHTML = `♡`
+    if (member[i].heart === "♡") {
+      memberHeart.addEventListener("click", () => {
+        member[i].heart = "♥︎";
+        heart.style.color = "#ff6a00";
+        heart.innerText = "♥︎";
+      });
+    };
+
     if (member[i].vlogLink.includes("tistory")) {
       memberVlogLink.innerHTML = `
-      <a href="${member[i].vlogLink}">
+      <a href="${member[i].vlogLink}" target="_blank">
         <img src="./images/tstorylogo.png" alt="vlog">
       </a>
       `;
     } else {
       memberVlogLink.innerHTML = `
-      <a href="${member[i].vlogLink}">
+      <a href="${member[i].vlogLink}" target="_blank">
         <img src="./images/velog_logo.jpeg" alt="vlog">
       </a>
       `;
     }
 
     memberGitLink.innerHTML = `
-      <a href="${member[i].gitLink}">
+      <a href="${member[i].gitLink}" target="_blank">
         <img src="./images/github_logo.svg" alt="vlog">
       </a>
       `;
+    });
   });
-});
+  
 
 // off
 memberModalBtn.addEventListener("click", () => {
@@ -155,10 +172,15 @@ memberModalBtn.addEventListener("click", () => {
   }
 });
 
+
+
+
+
 //멤버추가 모달
 const addCard = document.querySelector("#addCard");
 const addBtn = document.querySelector("#add_modalBtn");
 
+//on
 addCard.addEventListener("click", () => {
   modal1.classList.add("switch");
   modal2.classList.remove("switch");

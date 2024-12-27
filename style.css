@@ -2,6 +2,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1&family=Gowun+Batang&family=Jua&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap");
 
+/* @import url('https://fonts.cdnfonts.com/css/times-new-roman'); */
+
 /* reset */
 * {
   margin: 0;
@@ -22,6 +24,7 @@ a {
 }
 
 body {
+  /* font-family: 'Times New Roman', sans-serif; */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -321,6 +324,17 @@ body {
       display: flex;
       flex-direction: column;
       gap: 10px;
+    }
+
+    #member_info_head{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .heart{
+        font-size: 35px;
+        color:#999;
+      }
     }
 
     #name {
