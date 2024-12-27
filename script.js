@@ -41,7 +41,6 @@ window.onload = function () {
   // title.classList.add("switch");
 };
 
-
 //네비버튼
 // 팀소개
 btn1.addEventListener("click", () => {
@@ -140,9 +139,9 @@ const memberGitLink = document.querySelector(".github");
 const memberModalBtn = document.querySelector("#member_modalBtn");
 
 let memberCardsReload = () => {
-  console.log(member);
+  // console.log(member);
 
-  console.log("?");
+  // console.log("?");
   let memberCards = document.querySelectorAll(".cards");
   for (let i = 1; i < memberCards.length; i++) {
     // console.log(memberCards);
@@ -219,13 +218,13 @@ addBtn.addEventListener("click", () => {
 
 let doc = {};
 document.querySelector("#submit_btn").addEventListener("click", () => {
-  console.log("a");
+  // console.log("a");
 
   doc = {};
   let user = document.querySelectorAll(".textInput");
   let userArr = [];
   user.forEach((a) => {
-    console.log(a.value);
+    // console.log(a.value);
 
     if (a.value) {
       userArr.push(a.value);
@@ -302,7 +301,7 @@ const memberLoad = async function () {
     />
   `;
 
-    console.log(i);
+    // console.log(i);
     content2.appendChild(newCard);
   }
   // 새로운 카드를 컨테이너에 추가
