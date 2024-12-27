@@ -21,8 +21,6 @@ const app = initializeApp(firebaseConfig);
 // Firestore 초기화
 const db = getFirestore(app);
 
-
-
 //변수
 const title = document.querySelector("#start-page");
 const content1 = document.querySelector("#team-page");
@@ -32,8 +30,6 @@ const modal2 = document.querySelector("#member_add_layer");
 
 const btn1 = document.querySelector(".li-1");
 const btn2 = document.querySelector(".li-2");
-
-
 
 // 시작
 window.onload = function () {
@@ -143,6 +139,8 @@ const memberGitLink = document.querySelector(".github");
 const memberModalBtn = document.querySelector("#member_modalBtn");
 
 let memberCardsReload = () => {
+  console.log(member);
+
   console.log("?");
   let memberCards = document.querySelectorAll(".cards");
   for (let i = 1; i < memberCards.length; i++) {
@@ -199,8 +197,6 @@ memberModalBtn.addEventListener("click", () => {
     modal1.classList.add("switch");
   }
 });
-
-
 
 //멤버추가 모달
 const addCard = document.querySelector("#addCard");
@@ -322,7 +318,7 @@ const fetchCollectionData = async () => {
       ...doc.data(),
     }));
     // console.log(data);
-    console.log(data);
+    // console.log(data);
 
     data.forEach((x, i) => {
       member[i + 5] = {
@@ -338,7 +334,7 @@ const fetchCollectionData = async () => {
       };
     });
 
-    console.log(member);
+    // console.log(member);
 
     // member
   } catch (error) {
