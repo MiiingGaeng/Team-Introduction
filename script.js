@@ -140,6 +140,7 @@ const memberGitLink = document.querySelector(".github");
 const memberModalBtn = document.querySelector("#member_modalBtn");
 
 let memberCardsReload = () => {
+  console.log("?");
   let memberCards = document.querySelectorAll(".cards");
   for (let i = 1; i < memberCards.length; i++) {
     console.log(memberCards);
@@ -291,7 +292,7 @@ const close = () => {
 
 let userImg = document.querySelector("#userimg");
 userImg.addEventListener("change", () => {
-  console.log("!");
+  // console.log("!");
   const preview = document.querySelector(".modal__profile__img");
   preview.style.backgroundImage = "url(" + userImg.value + ")";
   preview.style.backgroundSize = "cover";
@@ -299,11 +300,11 @@ userImg.addEventListener("change", () => {
 });
 
 const memberLoad = function () {
-  let memberCards = document.querySelectorAll(".cards");
+  // let memberCards = document.querySelectorAll(".cards");
 
-  fetchCollectionData();
+  // fetchCollectionData();
   // 새로운 카드 생성
-  for (let i = 5; i < memberCards.length; i++) {}
+  // for (let i = 5; i < memberCards.length; i++) {}
   const newCard = document.createElement("div");
   newCard.className = "cards";
 
@@ -317,9 +318,10 @@ const memberLoad = function () {
       alt="New Member"
     />
   `;
-  memberCardsReload();
+
   // 새로운 카드를 컨테이너에 추가
   content2.appendChild(newCard);
+  memberCardsReload();
 };
 
 const fetchCollectionData = async () => {
@@ -335,7 +337,7 @@ const fetchCollectionData = async () => {
     data.forEach((x, i) => {
       member[i + 5] = {
         name: x.username,
-        mbti: x.mbit,
+        mbti: x.mbti,
         hobby: x.hobby,
         likes: x.likes,
         tmi: x.tmi,
