@@ -37,8 +37,8 @@ window.onload = function () {
   content2.classList.add("switch");
   modal1.classList.add("switch");
   modal2.classList.add("switch");
-  // title.classList.add("switch");
   memberLoad();
+  // title.classList.add("switch");
 };
 
 //네비버튼
@@ -299,26 +299,37 @@ userImg.addEventListener("change", () => {
   document.querySelector(".profile__img__text").style.display = "none";
 });
 
-const memberLoad = function () {
-  // let memberCards = document.querySelectorAll(".cards");
+let randomImg = () => {
+  let rNum = Math.floor(Math.random() * 4) + 1;
 
-  // fetchCollectionData();
+  return rNum;
+};
+
+const memberLoad = async function () {
+  let memberCards = document.querySelectorAll(".cards");
+  await fetchCollectionData();
   // 새로운 카드 생성
-  // for (let i = 5; i < memberCards.length; i++) {}
   const newCard = document.createElement("div");
-  newCard.className = "cards";
+  for (let i = 5; i < memberCards.length; i++) {
+    newCard.className = "cards";
 
-  // 새로운 카드의 콘텐츠 추가
-  newCard.innerHTML = `
+    // 새로운 카드의 콘텐츠 추가
+
+    newCard.innerHTML =
+      `
     <div class="hover">
-      <p>새 멤버</p>
+      <p>` +
+      member[i].name +
+      `</p>
     </div>
     <img
-      src="https://via.placeholder.com/150"
+      src="./images` +
+      randomImg();
+    +`.png"
       alt="New Member"
     />
   `;
-
+  }
   // 새로운 카드를 컨테이너에 추가
   content2.appendChild(newCard);
   memberCardsReload();
@@ -332,7 +343,7 @@ const fetchCollectionData = async () => {
       id: doc.id,
       ...doc.data(),
     }));
-    console.log(data);
+    // console.log(data);
 
     data.forEach((x, i) => {
       member[i + 5] = {
@@ -347,7 +358,8 @@ const fetchCollectionData = async () => {
         heart: "♡",
       };
     });
-    console.log(member);
+
+    // console.log(member);
 
     // member
   } catch (error) {
