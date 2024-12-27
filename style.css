@@ -140,7 +140,7 @@ body {
 
       #team-info-members {
         font-size: 20px;
-        color: rgba(185, 102, 0, 0.5);
+        color: #8b877e;
         font-weight: 400;
         display: flex;
         justify-content: space-between;
@@ -174,7 +174,7 @@ body {
 
         span {
           font-weight: 400;
-          font-size: 20px;
+          font-size: 16px;
         }
 
         hr {
@@ -184,7 +184,7 @@ body {
       }
       .team-info-right {
         font-size: 20px;
-        color: #4a3716;
+        color: #8b877e;
         font-weight: 400;
         text-align: right;
       }
