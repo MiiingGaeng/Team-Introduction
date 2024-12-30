@@ -199,7 +199,11 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+<<<<<<< HEAD
     /* justify-content: center; */
+=======
+    justify-content: flex-start;
+>>>>>>> 999d669 (judy)
     align-items: center;
     padding: 75px 125px;
     /* padding-top: 100px;
