@@ -260,6 +260,14 @@ const close = () => {
   if (!modal2.classList.contains("switch")) {
     modal2.classList.add("switch");
   }
+  let user = document.querySelectorAll(".textInput");
+  user.forEach((a) => {
+    // console.log(a.value);
+
+    if (a.value) {
+      a.value = "";
+    }
+  });
 };
 
 let userImg = document.querySelector("#userimg");
