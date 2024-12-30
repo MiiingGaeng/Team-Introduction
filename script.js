@@ -267,6 +267,12 @@ const close = () => {
     if (a.value) {
       a.value = "";
     }
+
+    const preview = document.querySelector(".modal__profile__img");
+    let ab = "https://cdn-icons-png.flaticon.com/512/5613/5613750.png";
+    preview.style.backgroundImage = "url(  " + ab + "  )";
+    preview.style.backgroundSize = "35%";
+    document.querySelector(".profile__img__text").style.display = "block";
   });
 };
 
@@ -282,8 +288,10 @@ userImg.addEventListener("change", () => {
     preview.style.backgroundSize = "cover";
     document.querySelector(".profile__img__text").style.display = "none";
   } else {
-    preview.style.backgroundImage =
-      "url( +'https://cdn-icons-png.flaticon.com/512/5613/5613750.png'+ )";
+    let a = "https://cdn-icons-png.flaticon.com/512/5613/5613750.png";
+    preview.style.backgroundImage = "url(  " + a + "  )";
+    // console.log(preview.style.backgroundImage);
+
     preview.style.backgroundSize = "35%";
     document.querySelector(".profile__img__text").style.display = "block";
   }
