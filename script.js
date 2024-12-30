@@ -6,6 +6,7 @@ import {
   getDocs,
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
+
 // Firebase 구성 정보
 const firebaseConfig = {
   apiKey: "AIzaSyD_G_08iBIVR1VBizfwuV8O5O-dgG0_AM4",
@@ -281,6 +282,12 @@ const memberLoad = async function () {
   await fetchCollectionData();
   // 새로운 카드 생성
   let memberCards = document.querySelectorAll(".cards");
+  for (let i = 6; i < member.length; i++) {
+    // console.log(memberCards[i]);
+    if (memberCards[i]) {
+      memberCards[i].remove();
+    }
+  }
   for (let i = 5; i < member.length; i++) {
     const newCard = document.createElement("div");
     newCard.className = "cards";
