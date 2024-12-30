@@ -6,7 +6,6 @@ import {
   getDocs,
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
-
 // Firebase 구성 정보
 const firebaseConfig = {
   apiKey: "AIzaSyD_G_08iBIVR1VBizfwuV8O5O-dgG0_AM4",
@@ -274,12 +273,36 @@ const close = () => {
 let userImg = document.querySelector("#userimg");
 userImg.addEventListener("change", () => {
   // console.log("!");
-  const preview = document.querySelector(".modal__profile__img");
-  preview.style.backgroundImage = "url(" + userImg.value + ")";
-  preview.style.backgroundSize = "cover";
-  document.querySelector(".profile__img__text").style.display = "none";
-});
 
+  const preview = document.querySelector(".modal__profile__img");
+  if (isValidURL(userImg.value)) {
+    // console.log("?");
+
+    preview.style.backgroundImage = "url(" + userImg.value + ")";
+    preview.style.backgroundSize = "cover";
+    document.querySelector(".profile__img__text").style.display = "none";
+  } else {
+    preview.style.backgroundImage =
+      "url( +'https://cdn-icons-png.flaticon.com/512/5613/5613750.png'+ )";
+    preview.style.backgroundSize = "35%";
+    document.querySelector(".profile__img__text").style.display = "block";
+  }
+});
+function isValidURL(input) {
+  console.log(input);
+
+  const urlPattern = new RegExp(
+    "^(https?:\\/\\/)?" + // 프로토콜
+      "((([a-zA-Z0-9\\-]+\\.)+[a-zA-Z]{2,})|" + // 도메인 이름
+      "((\\d{1,3}\\.){3}\\d{1,3}))" + // IP 주소 (v4)
+      "(\\:\\d+)?" + // 포트 번호
+      "(\\/[-a-zA-Z0-9@:%_\\+.~#?&//=]*)?" + // 경로
+      "(\\?[;&a-zA-Z0-9%_\\+.~#?&=]*)?" + // 쿼리 문자열
+      "(\\#[-a-zA-Z0-9_]*)?$" // 프래그먼트
+  );
+
+  return urlPattern.test(input);
+}
 let randomImg = () => {
   let rNum = Math.floor(Math.random() * 4) + 1;
 
