@@ -244,6 +244,7 @@ document.querySelector("#submit_btn").addEventListener("click", () => {
     };
     addData();
     close();
+    memberLoad();
   } else {
     alert("입력 확인해주세요.");
   }
